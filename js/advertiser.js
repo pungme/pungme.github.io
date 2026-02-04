@@ -159,6 +159,21 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 
+    // Pricing Section - Animate killed prices and cards on scroll
+    const pricingSection = document.querySelector('.pricing-section');
+    if (pricingSection) {
+        const pricingObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+        pricingObserver.observe(pricingSection);
+    }
+
     // No Hassle Section - Animate headlines on scroll
     const noHassleSection = document.querySelector('.no-hassle-section');
     if (noHassleSection) {

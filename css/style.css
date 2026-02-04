@@ -7268,7 +7268,7 @@ section {
     position: absolute;
     top: 24px;
     right: 24px;
-    background: var(--gray-100);
+    background: #1a2744;
     border-radius: 8px;
     padding: 8px 12px;
 }
@@ -11497,5 +11497,408 @@ section {
     .benefit-text {
         font-size: 14px;
         padding-top: 6px;
+    }
+}
+
+/* ================================
+   PRICING SECTION — "The Un-Pricing Page"
+   ================================ */
+.pricing-section {
+    padding: 140px 0 120px;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.pricing-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    background: linear-gradient(135deg, #FFF0F0, #FFE8E8);
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 100px;
+    margin-bottom: 24px;
+    letter-spacing: 0.02em;
+}
+
+.pricing-title {
+    font-size: clamp(40px, 6vw, 72px);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: var(--black);
+    margin-bottom: 40px;
+}
+
+/* Killed Prices — the visual hook */
+.pricing-killed {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.pricing-killed-item {
+    position: relative;
+    padding: 10px 24px;
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--gray-400);
+    letter-spacing: -0.01em;
+    overflow: hidden;
+}
+
+.pricing-killed-item span {
+    position: relative;
+}
+
+.killed-line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 4px;
+    background: var(--primary);
+    border-radius: 2px;
+    transform: translate(-50%, -50%) rotate(-12deg) scaleX(0);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 0 0 8px rgba(254, 56, 66, 0.4);
+}
+
+.pricing-section.in-view .pricing-killed-item:nth-child(1) .killed-line {
+    transform: translate(-50%, -50%) rotate(-12deg) scaleX(1);
+    transition-delay: 0.3s;
+}
+.pricing-section.in-view .pricing-killed-item:nth-child(2) .killed-line {
+    transform: translate(-50%, -50%) rotate(-12deg) scaleX(1);
+    transition-delay: 0.5s;
+}
+.pricing-section.in-view .pricing-killed-item:nth-child(3) .killed-line {
+    transform: translate(-50%, -50%) rotate(-12deg) scaleX(1);
+    transition-delay: 0.7s;
+}
+.pricing-section.in-view .pricing-killed-item:nth-child(4) .killed-line {
+    transform: translate(-50%, -50%) rotate(-12deg) scaleX(1);
+    transition-delay: 0.9s;
+}
+
+.pricing-subtitle {
+    font-size: 18px;
+    color: var(--gray-600);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Pricing Grid — 4 Benefit Cards */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 64px;
+}
+
+.pricing-perk-card {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: 24px;
+    padding: 40px 32px;
+    text-align: left;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+}
+
+.pricing-section.in-view .pricing-perk-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pricing-section.in-view .pricing-perk-card:nth-child(1) { transition-delay: 0.6s; }
+.pricing-section.in-view .pricing-perk-card:nth-child(2) { transition-delay: 0.75s; }
+.pricing-section.in-view .pricing-perk-card:nth-child(3) { transition-delay: 0.9s; }
+.pricing-section.in-view .pricing-perk-card:nth-child(4) { transition-delay: 1.05s; }
+
+.pricing-perk-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+
+.pricing-perk-icon {
+    width: 48px;
+    height: 48px;
+    margin-top: 56px;
+    margin-bottom: 24px;
+    color: var(--primary);
+}
+
+.pricing-perk-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.pricing-perk-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+}
+
+.pricing-perk-desc {
+    font-size: 15px;
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.pricing-perk-highlight {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    padding: 6px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 100px;
+    letter-spacing: 0.01em;
+}
+
+/* Card 1 */
+.pricing-perk-card:nth-child(1) .pricing-perk-icon { color: #4a9e5c; }
+.pricing-perk-card:nth-child(1) .pricing-perk-highlight {
+    background: rgba(74, 158, 92, 0.1);
+    color: #4a9e5c;
+}
+
+/* Card 2 */
+.pricing-perk-card:nth-child(2) .pricing-perk-icon { color: #5085c0; }
+.pricing-perk-card:nth-child(2) .pricing-perk-highlight {
+    background: rgba(80, 133, 192, 0.1);
+    color: #5085c0;
+}
+
+/* Card 3 */
+.pricing-perk-card:nth-child(3) .pricing-perk-icon { color: #c07830; }
+.pricing-perk-card:nth-child(3) .pricing-perk-highlight {
+    background: rgba(192, 120, 48, 0.1);
+    color: #c07830;
+}
+
+/* Card 4 */
+.pricing-perk-featured {
+    background: var(--gray-50);
+    border-color: var(--gray-200);
+}
+
+.pricing-perk-featured .pricing-perk-icon {
+    color: #8060b0;
+}
+
+.pricing-perk-featured .pricing-perk-title {
+    color: var(--black);
+}
+
+.pricing-perk-featured .pricing-perk-desc {
+    color: var(--gray-600);
+}
+
+.pricing-perk-featured-badge {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    padding: 6px 16px;
+    background: rgba(128, 96, 176, 0.1);
+    color: #8060b0;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 100px;
+    letter-spacing: 0.01em;
+}
+
+/* Briefing Generator Mini Preview */
+.briefing-preview {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.briefing-preview-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 500;
+}
+
+.briefing-preview-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.briefing-preview-dot:first-child {
+    background: #FF5F57;
+}
+.briefing-preview-dot:nth-child(2) {
+    background: #FFBD2E;
+}
+.briefing-preview-dot:nth-child(3) {
+    background: #28C840;
+    margin-right: 8px;
+}
+
+.briefing-preview-body {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.briefing-preview-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.briefing-field-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.briefing-field-value {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.briefing-preview-output {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.briefing-output-line {
+    height: 6px;
+    background: linear-gradient(90deg, rgba(255, 215, 0, 0.15), rgba(255, 165, 0, 0.08));
+    border-radius: 3px;
+    width: 100%;
+}
+
+.briefing-output-line.short {
+    width: 60%;
+}
+
+.briefing-output-line.medium {
+    width: 80%;
+}
+
+.briefing-preview-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    color: #1a1a1a;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 8px;
+    margin-top: 4px;
+}
+
+.pricing-perk-link {
+    color: #6A1FC0;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.pricing-perk-link:hover {
+    color: #4A0E90;
+}
+
+/* Pricing CTA */
+.pricing-cta {
+    text-align: center;
+}
+
+.pricing-cta-note {
+    margin-top: 16px;
+    font-size: 14px;
+    color: var(--gray-400);
+}
+
+/* Pricing Responsive */
+@media (max-width: 1024px) {
+    .pricing-section {
+        padding: 100px 0 80px;
+    }
+
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pricing-header {
+        margin-bottom: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing-section {
+        padding: 80px 0 60px;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .pricing-killed {
+        gap: 12px;
+    }
+
+    .pricing-killed-item {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .pricing-title {
+        font-size: 36px;
+    }
+
+    .pricing-subtitle {
+        font-size: 16px;
+    }
+
+    .pricing-perk-card {
+        padding: 32px 24px;
     }
 }
