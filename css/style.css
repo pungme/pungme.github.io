@@ -439,6 +439,7 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .btn-secondary:hover {
@@ -8946,14 +8947,11 @@ section {
     width: 140px;
     border-radius: 16px;
     overflow: hidden;
+    border: 3px solid white;
     box-shadow:
         0 12px 40px rgba(0, 0, 0, 0.3),
-        0 0 0 5px rgba(255, 255, 255, 1),
-        0 0 50px rgba(255, 255, 255, 0.8),
-        0 0 80px rgba(255, 255, 255, 0.4);
+        0 0 30px rgba(255, 255, 255, 0.5);
     pointer-events: auto;
-    -webkit-mask-image: -webkit-radial-gradient(white, black);
-    mask-image: radial-gradient(white, black);
     isolation: isolate;
 }
 
@@ -8974,6 +8972,7 @@ section {
     height: 220px;
     object-fit: cover;
     display: block;
+    border-radius: 13px;
 }
 
 .floating-video-card .video-stats {
