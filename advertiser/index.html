@@ -1100,13 +1100,34 @@
                     </ul>
                 </div>
                 <div class="buyout-demo">
-                    <div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 65%; padding-top: 50px; border-radius: 16px 0 0 16px; overflow: hidden;">
-                        <iframe src="https://app.guideflow.com/embed/0p0dg09tyk" style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0; border-radius: 16px 0 0 16px;" allowfullscreen></iframe>
+                    <div class="buyout-teaser">
+                        <img src="../assets/images/products/Teaser_Image_Buyout.png" alt="Buyout Feature Preview" class="buyout-teaser-img">
+                        <button class="btn-primary btn-large btn-gradient buyout-cta-btn" id="openBuyoutModal">
+                            <span>See How It Works</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Buyout Modal -->
+    <div class="buyout-modal" id="buyoutModal">
+        <div class="buyout-modal-overlay"></div>
+        <div class="buyout-modal-content">
+            <button class="buyout-modal-close" id="closeBuyoutModal">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12"/>
+                </svg>
+            </button>
+            <div class="buyout-modal-iframe-container">
+                <iframe src="https://app.guideflow.com/embed/0p0dg09tyk" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
 
     <!-- Case Studies / Industry Tabs -->
     <section class="case-studies-section" id="case-studies">
@@ -4339,6 +4360,48 @@
             });
             bentoCards.forEach(card => bentoObserver.observe(card));
         }
+
+        // Buyout Modal
+        const buyoutModal = document.getElementById('buyoutModal');
+        const openBuyoutModalBtn = document.getElementById('openBuyoutModal');
+        const closeBuyoutModalBtn = document.getElementById('closeBuyoutModal');
+        const buyoutModalOverlay = document.querySelector('.buyout-modal-overlay');
+        const buyoutTeaser = document.querySelector('.buyout-teaser');
+
+        const openBuyoutModal = () => {
+            buyoutModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        };
+
+        if (openBuyoutModalBtn && buyoutModal) {
+            openBuyoutModalBtn.addEventListener('click', openBuyoutModal);
+        }
+
+        if (buyoutTeaser && buyoutModal) {
+            buyoutTeaser.addEventListener('click', openBuyoutModal);
+        }
+
+        if (closeBuyoutModalBtn && buyoutModal) {
+            closeBuyoutModalBtn.addEventListener('click', () => {
+                buyoutModal.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
+
+        if (buyoutModalOverlay && buyoutModal) {
+            buyoutModalOverlay.addEventListener('click', () => {
+                buyoutModal.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && buyoutModal && buyoutModal.classList.contains('active')) {
+                buyoutModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
     </script>
 </body>
 </html>
