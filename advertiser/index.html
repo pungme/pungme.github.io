@@ -2935,11 +2935,11 @@
                     </div>
                 </div>
 
-                <!-- Tall Feature: Creator Network -->
+                <!-- Tall Feature: Creator Sourcing -->
                 <div class="bento-card bento-tall" data-scroll>
-                    <div class="bento-tag">Creator Network</div>
+                    <div class="bento-tag">Creator Sourcing</div>
                     <h3 class="bento-card-title">100K+<br>Creators</h3>
-                    <p class="bento-card-text">Access verified creators across all niches, demographics, and regions.</p>
+                    <p class="bento-card-text">Once your campaign is live, >100k creators can join and submit their content. No outreach. No negotiations. Fastest Content Delivery on the market.</p>
                     <div class="creator-avatars-stack">
                         <div class="avatar-row">
                             <div class="avatar-track">
@@ -2997,16 +2997,16 @@
                             <path d="M9 12l2 2 4-4" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"/>
                         </svg>
                     </div>
-                    <h4 class="bento-small-title">Brand Safety</h4>
-                    <p class="bento-small-text">Full content control and approval before anything goes live.</p>
+                    <h4 class="bento-small-title">Brand Safety & Quality Review</h4>
+                    <p class="bento-small-text">Your only To-Do? Watch incoming creations and decline free of charge, if content is not to your liking. Budget flows back to campaign pool for other creators.</p>
                 </div>
 
                 <!-- Wide Feature: Analytics Dashboard -->
                 <div class="bento-card bento-wide bento-2row" data-scroll>
                     <div class="bento-card-content">
                         <div class="bento-tag">Real-Time Insights</div>
-                        <h3 class="bento-card-title">Analytics Dashboard</h3>
-                        <p class="bento-card-text">Track every view, like, and share in real-time.</p>
+                        <h3 class="bento-card-title">Analytics & Reporting</h3>
+                        <p class="bento-card-text">Monitor all relevant stats in your account in real-time. Download all performance metrics as .csv & xlsx.</p>
                     </div>
                     <div class="bento-visual-analytics">
                         <!-- Top Metrics Row -->
@@ -3182,8 +3182,8 @@
                 <div class="bento-card bento-wide bento-buyout" data-scroll>
                     <div class="bento-card-content">
                         <div class="bento-tag">Content Licensing</div>
-                        <h3 class="bento-card-title">Buyout Rights</h3>
-                        <p class="bento-card-text">Purchase ad rights to top-performing creator content directly on the platform. Includes ad rights on other platforms and Spark Ads codes. Terms apply.</p>
+                        <h3 class="bento-card-title">Buyouts</h3>
+                        <p class="bento-card-text">Instant buyouts of top-performing campaign videos. Identify the best organic assets and scale them instantly on your desired Paid Ads channels.</p>
                     </div>
                     <div class="bento-visual-buyout">
                         <div class="buyout-flow">
@@ -3287,7 +3287,6 @@
                                     <div class="brief-line typing line-3"></div>
                                     <div class="brief-line short typing line-4"></div>
                                 </div>
-                                <div class="ai-cursor"></div>
                                 <div class="ai-sparkles">
                                     <svg class="sparkle s1" viewBox="0 0 24 24" fill="var(--primary)">
                                         <path d="M12 2L9.5 9.5 2 12l7.5 2.5L12 22l2.5-7.5L22 12l-7.5-2.5L12 2z"/>
@@ -3322,23 +3321,27 @@
                     /* AI Briefing Generator Styles */
                     .bento-briefing {
                         overflow: hidden;
+                        display: flex;
+                        flex-direction: column;
                     }
 
                     .bento-visual-briefing {
-                        margin-top: 16px;
+                        margin-top: 24px;
+                        flex: 1;
                     }
 
                     .briefing-generator {
                         display: flex;
                         align-items: center;
-                        gap: 20px;
-                        padding: 12px;
+                        justify-content: center;
+                        gap: 40px;
+                        padding: 0 24px;
                     }
 
                     .industry-chips {
                         display: flex;
                         flex-direction: column;
-                        gap: 8px;
+                        gap: 10px;
                         flex-shrink: 0;
                     }
 
@@ -3377,6 +3380,8 @@
                     .brief-document {
                         position: relative;
                         flex: 1;
+                        max-width: 400px;
+                        min-width: 280px;
                         background: white;
                         border-radius: 12px;
                         box-shadow: 0 4px 20px rgba(0,0,0,0.08);
@@ -3440,7 +3445,7 @@
                         left: 0;
                         height: 100%;
                         width: 100%;
-                        background: linear-gradient(90deg, var(--primary-light) 0%, var(--primary) 50%, var(--primary-light) 100%);
+                        background: linear-gradient(90deg, var(--gray-200) 0%, var(--gray-400) 50%, var(--gray-200) 100%);
                         border-radius: 4px;
                         animation: typing-fill 2s ease-in-out infinite;
                     }
@@ -3454,21 +3459,6 @@
                         0% { transform: translateX(-100%); opacity: 0.5; }
                         50% { transform: translateX(0); opacity: 1; }
                         100% { transform: translateX(100%); opacity: 0.5; }
-                    }
-
-                    .ai-cursor {
-                        position: absolute;
-                        bottom: 26px;
-                        right: 40%;
-                        width: 2px;
-                        height: 14px;
-                        background: var(--primary);
-                        animation: cursor-blink 0.8s ease-in-out infinite;
-                    }
-
-                    @keyframes cursor-blink {
-                        0%, 50% { opacity: 1; }
-                        51%, 100% { opacity: 0; }
                     }
 
                     .ai-sparkles {
@@ -3563,6 +3553,20 @@
                         }
                     }
                 </style>
+
+                <!-- Small Feature: Billing & Invoicing -->
+                <div class="bento-card bento-small" data-scroll>
+                    <div class="bento-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" class="bento-icon">
+                            <rect x="3" y="4" width="18" height="16" rx="2" stroke="var(--primary)" stroke-width="2"/>
+                            <path d="M3 10h18" stroke="var(--primary)" stroke-width="2"/>
+                            <path d="M7 15h4" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M7 18h2" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h4 class="bento-small-title">Billing & Invoicing</h4>
+                    <p class="bento-small-text">Fully automated billing & invoice creation for advertisers & creators. "Pay via Invoice" available!</p>
+                </div>
 
                 <!-- Wide Feature: Automated Workflow - Autopilot Visualization -->
                 <div class="bento-card bento-autopilot" style="grid-column: span 3;" data-scroll>
