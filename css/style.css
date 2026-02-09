@@ -11472,6 +11472,9 @@ section {
     border-radius: 16px;
     overflow: hidden;
     cursor: pointer;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    isolation: isolate;
 }
 
 .buyout-teaser::before {
@@ -11496,6 +11499,8 @@ section {
     display: block;
     filter: blur(2px);
     transition: filter 0.3s ease;
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
 }
 
 .buyout-teaser:hover .buyout-teaser-img {
