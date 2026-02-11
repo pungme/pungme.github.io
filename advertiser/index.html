@@ -1574,6 +1574,335 @@
         </div>
     </section>
 
+    <!-- Own Platform Proof Section -->
+    <section class="own-proof-section">
+        <div class="own-proof-bg"></div>
+        <div class="container">
+            <div class="own-proof-layout">
+                <div class="own-proof-content">
+                    <span class="own-proof-badge">THE ULTIMATE PROOF</span>
+                    <h2 class="own-proof-headline">We Put Our Money<br>Where Our Mouth Is</h2>
+                    <p class="own-proof-subtext">We don't just build the platform—we use it to grow our own app. Every euro we invest in WePush is proof that we believe in what we've built.</p>
+
+                    <div class="own-proof-card">
+                        <div class="own-proof-card-header">
+                            <div class="own-proof-logo-box">
+                                <img src="../assets/images/case-studies/songpush-logo.png" alt="SongPush" class="own-proof-logo">
+                            </div>
+                            <div class="own-proof-card-title">
+                                <span class="own-proof-card-name">SongPush App</span>
+                                <span class="own-proof-card-subtitle">Promoted with WePush</span>
+                            </div>
+                        </div>
+                        <div class="own-proof-metrics">
+                            <div class="own-proof-metric">
+                                <span class="own-proof-metric-value">9,000+</span>
+                                <span class="own-proof-metric-label">App Downloads</span>
+                            </div>
+                            <div class="own-proof-metric">
+                                <span class="own-proof-metric-value">&lt; €0.30</span>
+                                <span class="own-proof-metric-label">Cost per Download</span>
+                            </div>
+                            <div class="own-proof-metric">
+                                <span class="own-proof-metric-value">2 Weeks</span>
+                                <span class="own-proof-metric-label">Duration</span>
+                            </div>
+                            <div class="own-proof-metric own-proof-metric-highlight">
+                                <span class="own-proof-metric-value">10x</span>
+                                <span class="own-proof-metric-label">vs. Paid Ads</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="own-proof-phone">
+                    <div class="own-proof-phone-glow"></div>
+                    <img src="../assets/images/case-studies/songpush-campaign.png" alt="SongPush App" class="own-proof-phone-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .own-proof-section {
+            position: relative;
+            padding: 100px 0;
+            overflow: hidden;
+        }
+
+        .own-proof-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            z-index: 0;
+        }
+
+        .own-proof-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(168, 85, 247, 0.15) 0%, transparent 50%);
+        }
+
+        .own-proof-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .own-proof-section .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .own-proof-layout {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .own-proof-content {
+            flex: 1;
+        }
+
+        .own-proof-phone {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .own-proof-phone-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.4) 0%, transparent 70%);
+            filter: blur(50px);
+            z-index: 0;
+        }
+
+        .own-proof-phone-img {
+            position: relative;
+            z-index: 1;
+            width: 300px;
+            height: auto;
+            filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.5));
+        }
+
+        .own-proof-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.2));
+            border: 1px solid rgba(168, 85, 247, 0.4);
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #a855f7;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+
+        .own-proof-headline {
+            font-size: clamp(36px, 5vw, 52px);
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .own-proof-subtext {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .own-proof-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 32px;
+            backdrop-filter: blur(10px);
+            margin-bottom: 32px;
+        }
+
+        .own-proof-card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 28px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .own-proof-logo-box {
+            width: 56px;
+            height: 56px;
+            background: #ffffff;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .own-proof-logo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .own-proof-card-title {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .own-proof-card-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .own-proof-card-subtitle {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .own-proof-metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .own-proof-metric {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .own-proof-metric-value {
+            font-size: 28px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 6px;
+            line-height: 1;
+        }
+
+        .own-proof-metric-highlight .own-proof-metric-value {
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 36px;
+        }
+
+        .own-proof-metric-label {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            line-height: 1.3;
+        }
+
+        @media (max-width: 1100px) {
+            .own-proof-layout {
+                gap: 48px;
+            }
+
+            .own-proof-phone-img {
+                width: 240px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .own-proof-layout {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .own-proof-phone {
+                order: -1;
+            }
+
+            .own-proof-phone-img {
+                width: 200px;
+            }
+
+            .own-proof-subtext {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .own-proof-metrics {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+
+            .own-proof-card-header {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .own-proof-section {
+                padding: 60px 0;
+            }
+
+            .own-proof-card {
+                padding: 24px 20px;
+            }
+
+            .own-proof-metric-value {
+                font-size: 24px;
+            }
+
+            .own-proof-metric-highlight .own-proof-metric-value {
+                font-size: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .own-proof-section {
+                padding: 60px 0;
+            }
+
+            .own-proof-metrics {
+                gap: 24px 16px;
+            }
+
+            .own-proof-metric {
+                min-width: 100px;
+            }
+
+            .own-proof-metric-value {
+                font-size: 28px;
+            }
+
+            .own-proof-metric-highlight .own-proof-metric-value {
+                font-size: 36px;
+            }
+        }
+    </style>
+
     <!-- Creativity Section -->
     <section class="creativity-section">
         <div class="container">
