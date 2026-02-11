@@ -11436,7 +11436,7 @@ section {
 
 .buyout-benefits li {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 16px;
 }
 
@@ -11455,8 +11455,7 @@ section {
 .benefit-text {
     font-size: 16px;
     color: var(--gray-200);
-    line-height: 1.6;
-    padding-top: 8px;
+    line-height: 1.5;
 }
 
 .buyout-demo {
@@ -11623,7 +11622,6 @@ section {
 
     .benefit-text {
         font-size: 14px;
-        padding-top: 6px;
     }
 }
 
