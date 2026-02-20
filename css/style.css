@@ -9092,6 +9092,15 @@ section {
         0 0 30px rgba(255, 255, 255, 0.5);
     pointer-events: auto;
     isolation: isolate;
+    background: #e8e8e8;
+}
+
+/* Shimmer loading for floating video cards */
+.floating-video-card::before {
+    background: linear-gradient(110deg, #e0e0e0 8%, #f0f0f0 18%, #e0e0e0 33%);
+    background-size: 200% 100%;
+    animation: heroShimmer 1.5s linear infinite;
+    opacity: 1;
 }
 
 .floating-video-card:nth-child(1) {
