@@ -10362,7 +10362,7 @@ section {
 
 /* Campaign Tile */
 .tile-campaign {
-    width: 380px;
+    width: 420px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -35%) scale(0);
@@ -11287,46 +11287,6 @@ section {
         max-width: 700px;
         transform: scale(0.85);
     }
-
-    .exploding-videos {
-        gap: 12px;
-        padding: 30px;
-    }
-
-    .exploding-video {
-        width: 120px;
-    }
-
-    .analytics-tiles {
-        gap: 10px;
-    }
-
-    .analytics-tile {
-        width: 150px;
-        padding: 12px;
-    }
-
-    .analytics-icon {
-        width: 24px;
-        height: 24px;
-    }
-
-    .analytics-icon svg {
-        width: 14px;
-        height: 14px;
-    }
-
-    .analytics-value {
-        font-size: 24px;
-    }
-
-    .analytics-label {
-        font-size: 9px;
-    }
-
-    .analytics-graph {
-        height: 45px;
-    }
 }
 
 @media (max-width: 768px) {
@@ -11344,90 +11304,52 @@ section {
         height: 10px;
     }
 
+    .scroll-section-title {
+        top: 110px;
+    }
+
     .phase-label {
-        top: 100px;
+        top: 140px;
     }
 
     .phase-text {
-        font-size: 16px;
+        font-size: 22px;
+        white-space: normal;
+        text-align: center;
+        width: 90vw;
     }
 
     .animation-stage {
-        transform: scale(0.7);
+        transform: scale(0.8);
     }
 
     .tile-briefing {
-        width: 240px;
+        transform: translate(-100%, -50%) scale(0.8);
+    }
+
+    .tile-briefing.visible {
+        transform: translate(-100%, -50%) scale(1);
     }
 
     .tile-product {
-        width: 250px;
+        transform: translate(20%, -50%) scale(0.8);
     }
 
-    .products-grid {
-        gap: 8px;
+    .tile-product.visible {
+        transform: translate(20%, -50%) scale(1);
     }
 
-    .product-image {
-        height: 100px;
+    .card-stack {
+        width: 380px;
+        height: 675px;
     }
 
-    .product-name {
-        font-size: 9px;
-    }
-
-    .tile-targeting {
-        width: 300px;
+    .analytics-tiles {
+        transform: translate(-50%, -50%) scale(0.85);
     }
 
     .scroll-sticky {
         overflow: hidden;
-    }
-
-    .exploding-videos {
-        gap: 10px;
-        padding: 20px;
-    }
-
-    .exploding-video {
-        width: 100px;
-        border-radius: 10px;
-    }
-
-    .analytics-tiles {
-        gap: 8px;
-    }
-
-    .analytics-tile {
-        width: 120px;
-        padding: 10px;
-    }
-
-    .analytics-icon {
-        width: 22px;
-        height: 22px;
-    }
-
-    .analytics-icon svg {
-        width: 12px;
-        height: 12px;
-    }
-
-    .analytics-value {
-        font-size: 20px;
-    }
-
-    .analytics-label {
-        font-size: 8px;
-    }
-
-    .analytics-graph {
-        height: 35px;
-    }
-
-    .analytics-trend {
-        font-size: 8px;
-        padding: 2px 5px;
     }
 
     .scroll-hint {
@@ -11444,96 +11366,12 @@ section {
         display: none;
     }
 
-    .tile-briefing {
-        width: 220px;
-    }
-
-    .tile-product {
-        width: 230px;
-    }
-
-    .tile-targeting {
-        width: 260px;
-    }
-
-    .filter-tags {
-        gap: 4px;
-    }
-
-    .filter-tag {
-        font-size: 10px;
-        padding: 4px 8px;
-    }
-
     .animation-stage {
-        transform: scale(0.55);
+        transform: scale(0.65);
     }
 
-    /* Simplify on very small screens - 2x2 grid, show fewer videos */
-    .exploding-videos {
-        grid-template-columns: repeat(2, auto);
-        gap: 8px;
-        padding: 16px;
-    }
-
-    .exploding-video {
-        width: 80px;
-        border-radius: 8px;
-    }
-
-    .exploding-video[data-index="1"],
-    .exploding-video[data-index="3"],
-    .exploding-video[data-index="5"],
-    .exploding-video[data-index="7"] {
-        display: none;
-    }
-
-    /* Simplify analytics - 2x2 grid on mobile */
     .analytics-tiles {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 8px;
-    }
-
-    .analytics-tile[data-index="4"],
-    .analytics-tile[data-index="5"],
-    .analytics-tile[data-index="6"],
-    .analytics-tile[data-index="7"] {
-        display: none;
-    }
-
-    .analytics-tile {
-        width: 100px;
-        padding: 8px;
-    }
-
-    .analytics-icon {
-        width: 18px;
-        height: 18px;
-    }
-
-    .analytics-icon svg {
-        width: 10px;
-        height: 10px;
-    }
-
-    .analytics-graph {
-        height: 24px;
-        margin-bottom: 6px;
-    }
-
-    .analytics-value {
-        font-size: 14px;
-    }
-
-    .analytics-label {
-        font-size: 7px;
-        margin-bottom: 4px;
-    }
-
-    .analytics-trend {
-        font-size: 8px;
-        padding: 2px 5px;
+        transform: translate(-50%, -50%) scale(0.75);
     }
 }
 
