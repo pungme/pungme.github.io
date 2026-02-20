@@ -1,6 +1,65 @@
 // Advertiser Page Specific JavaScript
 
 // ================================
+// HERO LOADING STATE
+// ================================
+// Show a skeleton shimmer while hero videos load, then reveal
+// the video grid and floating cards with staggered animations.
+(function() {
+    var visual = document.querySelector('.advertiser-visual');
+    if (!visual) return;
+
+    var videoGrid = visual.querySelector('.video-grid-container');
+    if (!videoGrid) return;
+
+    var loaded = false;
+
+    function markLoaded() {
+        if (loaded) return;
+        loaded = true;
+        visual.classList.add('hero-loaded');
+    }
+
+    // Pick the first video from each column to watch for readiness
+    var columns = videoGrid.querySelectorAll('.video-grid-column');
+    var firstVideos = [];
+    columns.forEach(function(col) {
+        var v = col.querySelector('.grid-video-card video');
+        if (v) firstVideos.push(v);
+    });
+
+    if (firstVideos.length === 0) {
+        markLoaded();
+        return;
+    }
+
+    var readyCount = 0;
+    var needed = Math.min(2, firstVideos.length);
+
+    firstVideos.forEach(function(video) {
+        // Override preload="none" so these first videos start downloading
+        video.preload = 'auto';
+        video.setAttribute('preload', 'auto');
+
+        function onReady() {
+            readyCount++;
+            if (readyCount >= needed) markLoaded();
+        }
+
+        // Already cached / loaded
+        if (video.readyState >= 2) {
+            onReady();
+            return;
+        }
+
+        video.addEventListener('loadeddata', onReady, { once: true });
+    });
+
+    // Fallback: don't wait forever on slow connections
+    setTimeout(markLoaded, 4000);
+})();
+
+// ================================
 // VIDEO LAZY LOADING VIA INTERSECTION OBSERVER
 // ================================
 // Play videos only when visible, pause when off-screen.

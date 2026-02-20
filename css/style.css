@@ -8489,6 +8489,88 @@ section {
     color: #16a34a;
 }
 
+/* ================================
+   HERO LOADING STATE
+   ================================ */
+.hero-loading-skeleton {
+    position: absolute;
+    inset: 0;
+    z-index: 25;
+    display: flex;
+    gap: 12px;
+    padding: 0 10px;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.hero-loading-skeleton .skeleton-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hero-loading-skeleton .skeleton-card {
+    aspect-ratio: 9 / 16;
+    border-radius: 16px;
+    background: linear-gradient(110deg, #e8e8e8 8%, #f5f5f5 18%, #e8e8e8 33%);
+    background-size: 200% 100%;
+    animation: heroShimmer 1.5s linear infinite;
+    flex-shrink: 0;
+}
+
+@keyframes heroShimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Hide skeleton when loaded */
+.advertiser-visual.hero-loaded .hero-loading-skeleton {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Hide video grid until loaded */
+.advertiser-visual:not(.hero-loaded) .video-grid-container {
+    opacity: 0;
+}
+
+.advertiser-visual .video-grid-container {
+    transition: opacity 0.6s ease;
+}
+
+/* Pause grid scroll until loaded */
+.advertiser-visual:not(.hero-loaded) .video-grid-track {
+    animation-play-state: paused;
+}
+
+/* Suppress floating card animations until loaded */
+.advertiser-visual:not(.hero-loaded) .card-targeting,
+.advertiser-visual:not(.hero-loaded) .card-engagement,
+.advertiser-visual:not(.hero-loaded) .card-ai-quality {
+    animation: none;
+    opacity: 0;
+}
+
+/* Suppress engagement bar animations until loaded */
+.advertiser-visual:not(.hero-loaded) .engagement-bar {
+    animation: none;
+    height: 0;
+}
+
+/* Suppress location pin animations until loaded */
+.advertiser-visual:not(.hero-loaded) .location-pin {
+    animation: none;
+    opacity: 0;
+    transform: scale(0) translateY(-10px);
+}
+
+.advertiser-visual:not(.hero-loaded) .location-pin::before {
+    animation: none;
+}
+
 .hero-image-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -9127,7 +9209,7 @@ section {
 /* Creativity Section */
 .creativity-section {
     padding: 80px 0 0;
-    background: transparent;
+    background: var(--gray-50);
 }
 
 /* Creator CTA Section */
@@ -9209,6 +9291,14 @@ section {
     }
 
     .grid-video-card {
+        border-radius: 12px;
+    }
+
+    .hero-loading-skeleton {
+        gap: 10px;
+    }
+
+    .hero-loading-skeleton .skeleton-card {
         border-radius: 12px;
     }
 
@@ -9399,7 +9489,7 @@ section {
    ================================ */
 .no-hassle-section {
     padding: 120px 0;
-    background: var(--white);
+    background: var(--gray-50);
     text-align: center;
     content-visibility: auto;
     contain-intrinsic-size: auto 800px;
