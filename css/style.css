@@ -7825,7 +7825,7 @@ section {
 @media (max-width: 768px) {
     .container,
     .container-wide {
-        padding: 0 24px;
+        padding: 0 16px;
     }
 
     .nav {
