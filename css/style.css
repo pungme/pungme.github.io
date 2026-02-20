@@ -68,15 +68,8 @@ html {
 .grid-video-card video,
 .floating-video-card video,
 .review-card video {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.tiktok-video-container.video-loaded video,
-.grid-video-card.video-loaded video,
-.floating-video-card.video-loaded video,
-.review-card.video-loaded video {
     opacity: 1;
+    transition: opacity 0.5s ease;
 }
 
 body {
