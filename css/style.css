@@ -9092,15 +9092,7 @@ section {
         0 0 30px rgba(255, 255, 255, 0.5);
     pointer-events: auto;
     isolation: isolate;
-    background: #e8e8e8;
-}
-
-/* Shimmer loading for floating video cards */
-.floating-video-card::before {
-    background: linear-gradient(110deg, #e0e0e0 8%, #f0f0f0 18%, #e0e0e0 33%);
-    background-size: 200% 100%;
-    animation: heroShimmer 1.5s linear infinite;
-    opacity: 1;
+    background: #1a1a1a;
 }
 
 .floating-video-card:nth-child(1) {
@@ -9180,23 +9172,16 @@ section {
     transform: scale(1.1);
 }
 
-/* Floating video animations - only after video is loaded */
+/* Floating video animations - only after section animates */
 .case-studies-section.animate-in .tab-pane.active .floating-video-card:nth-child(1) {
+    animation: floatInTopRight 0.5s ease forwards;
+    animation-delay: 0.5s;
     opacity: 0;
 }
 
 .case-studies-section.animate-in .tab-pane.active .floating-video-card:nth-child(2) {
-    opacity: 0;
-}
-
-.case-studies-section.animate-in .tab-pane.active .floating-video-card.video-loaded:nth-child(1) {
-    animation: floatInTopRight 0.5s ease forwards;
-    opacity: 0;
-}
-
-.case-studies-section.animate-in .tab-pane.active .floating-video-card.video-loaded:nth-child(2) {
     animation: floatInBottomLeft 0.5s ease forwards;
-    animation-delay: 0.15s;
+    animation-delay: 0.8s;
     opacity: 0;
 }
 
