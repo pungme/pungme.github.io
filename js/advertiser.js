@@ -62,24 +62,51 @@
         }
     });
 
-    // Observer for CSS-animated containers — play/pause ALL child videos together
-    var containerObserver = new IntersectionObserver(function(entries) {
+    // CSS-animated containers: only play videos actually visible within
+    // the container's clipped area. Check periodically since CSS transforms
+    // move videos through the visible region over time.
+    function isVisibleInContainer(video, containerRect) {
+        var r = video.getBoundingClientRect();
+        // Video must overlap the container's visible area
+        return r.bottom > containerRect.top && r.top < containerRect.bottom &&
+               r.right > containerRect.left && r.left < containerRect.right &&
+               r.width > 0 && r.height > 0;
+    }
+
+    var animatedContainers = document.querySelectorAll(cssAnimatedSelectors);
+    var animContainerInViewport = new Map(); // track which containers are in viewport
+
+    // Use IntersectionObserver just to know if the container section is on screen
+    var containerViewportObserver = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
-            var videos = entry.target.querySelectorAll('video');
-            if (entry.isIntersecting) {
-                videos.forEach(function(v) { playAndReveal(v); });
-            } else {
-                videos.forEach(function(v) { v.pause(); });
+            animContainerInViewport.set(entry.target, entry.isIntersecting);
+            // If container left viewport, pause all its videos
+            if (!entry.isIntersecting) {
+                entry.target.querySelectorAll('video').forEach(function(v) {
+                    v.pause();
+                });
             }
         });
-    }, {
-        rootMargin: '300px 0px',
-        threshold: 0
+    }, { rootMargin: '300px 0px', threshold: 0 });
+
+    animatedContainers.forEach(function(container) {
+        containerViewportObserver.observe(container);
     });
 
-    document.querySelectorAll(cssAnimatedSelectors).forEach(function(container) {
-        containerObserver.observe(container);
-    });
+    // Periodically check which videos inside on-screen containers are visible
+    setInterval(function() {
+        animatedContainers.forEach(function(container) {
+            if (!animContainerInViewport.get(container)) return;
+            var containerRect = container.getBoundingClientRect();
+            container.querySelectorAll('video').forEach(function(v) {
+                if (isVisibleInContainer(v, containerRect)) {
+                    playAndReveal(v);
+                } else {
+                    v.pause();
+                }
+            });
+        });
+    }, 1000);
 
     // Mark already-loaded videos (e.g. from cache)
     document.querySelectorAll('video').forEach(function(video) {
