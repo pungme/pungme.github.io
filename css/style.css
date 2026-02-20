@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+/* Font loaded via <link> in HTML for better performance */
 
 * {
     margin: 0;
@@ -8617,6 +8617,8 @@ section {
 .case-studies-section {
     padding: 100px 0;
     background: transparent;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 1200px;
 }
 
 /* Hidden by default until animated */
@@ -9349,6 +9351,8 @@ section {
     padding: 120px 0;
     background: var(--white);
     text-align: center;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 800px;
 }
 
 .no-hassle-headlines {
@@ -11638,6 +11642,8 @@ section {
     background: var(--white);
     position: relative;
     overflow: hidden;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 1000px;
 }
 
 .pricing-header {

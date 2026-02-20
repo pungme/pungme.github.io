@@ -1,5 +1,69 @@
 // Advertiser Page Specific JavaScript
 
+// ================================
+// VIDEO LAZY LOADING VIA INTERSECTION OBSERVER
+// ================================
+// Play videos only when visible, pause when off-screen.
+// This prevents all 50+ videos from downloading/playing at once.
+//
+// CSS-animated containers (carousels, grids) use transform to move
+// children, which doesn't update layout position. IntersectionObserver
+// can't detect individual videos inside them, so we observe the
+// parent container and play/pause ALL its child videos together.
+(function() {
+    // Containers whose children are moved via CSS transforms
+    var cssAnimatedSelectors = '.creativity-carousel, .video-grid-container';
+
+    // Collect videos that live inside CSS-animated containers
+    var animatedVideos = new Set();
+    document.querySelectorAll(cssAnimatedSelectors).forEach(function(container) {
+        container.querySelectorAll('video').forEach(function(v) {
+            animatedVideos.add(v);
+        });
+    });
+
+    // Observer for individual videos (NOT inside CSS-animated containers)
+    var videoObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            var video = entry.target;
+            if (entry.isIntersecting) {
+                video.play().catch(function() {});
+            } else {
+                video.pause();
+            }
+        });
+    }, {
+        rootMargin: '200px 0px',
+        threshold: 0.1
+    });
+
+    // Observe individual videos that are NOT in CSS-animated containers
+    document.querySelectorAll('video').forEach(function(video) {
+        if (!animatedVideos.has(video)) {
+            videoObserver.observe(video);
+        }
+    });
+
+    // Observer for CSS-animated containers — play/pause ALL child videos together
+    var containerObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            var videos = entry.target.querySelectorAll('video');
+            if (entry.isIntersecting) {
+                videos.forEach(function(v) { v.play().catch(function() {}); });
+            } else {
+                videos.forEach(function(v) { v.pause(); });
+            }
+        });
+    }, {
+        rootMargin: '300px 0px',
+        threshold: 0
+    });
+
+    document.querySelectorAll(cssAnimatedSelectors).forEach(function(container) {
+        containerObserver.observe(container);
+    });
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
     // Tab Functionality with Auto-Progress
     const tabBtns = document.querySelectorAll('.tab-btn');
