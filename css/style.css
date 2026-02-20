@@ -11843,8 +11843,12 @@ section {
         font-size: 14px;
     }
 
+    .buyout-section > .container {
+        padding-right: 20px;
+    }
+
     .buyout-demo {
-        padding-right: 0;
+        padding: 0;
     }
 
     .buyout-teaser {
