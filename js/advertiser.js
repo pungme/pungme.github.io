@@ -46,17 +46,21 @@
             if (readyCount >= needed) markLoaded();
         }
 
-        // Already cached / loaded
-        if (video.readyState >= 2) {
+        // Already cached / ready to play
+        if (video.readyState >= 3) {
             onReady();
             return;
         }
 
-        video.addEventListener('loadeddata', onReady, { once: true });
+        // canplay fires when enough data is buffered to render frames
+        video.addEventListener('canplay', onReady, { once: true });
+
+        // Force the browser to actually start fetching
+        video.load();
     });
 
-    // Fallback: don't wait forever on slow connections
-    setTimeout(markLoaded, 4000);
+    // Absolute failsafe for very slow connections
+    setTimeout(markLoaded, 8000);
 })();
 
 // ================================
