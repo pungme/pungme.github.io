@@ -13,6 +13,24 @@
 (function() {
     // Containers whose children are moved via CSS transforms
     var cssAnimatedSelectors = '.creativity-carousel, .video-grid-container';
+    var videoContainerSelector = '.tiktok-video-container, .grid-video-card, .floating-video-card, .review-card';
+
+    function markVideoLoaded(video) {
+        var container = video.closest(videoContainerSelector);
+        if (container && !container.classList.contains('video-loaded')) {
+            container.classList.add('video-loaded');
+        }
+    }
+
+    // Play a video and mark its container as loaded (success or failure)
+    function playAndReveal(video) {
+        video.play().then(function() {
+            markVideoLoaded(video);
+        }).catch(function() {
+            // play() rejected (e.g. browser throttle) — still reveal the video
+            markVideoLoaded(video);
+        });
+    }
 
     // Collect videos that live inside CSS-animated containers
     var animatedVideos = new Set();
@@ -27,7 +45,7 @@
         entries.forEach(function(entry) {
             var video = entry.target;
             if (entry.isIntersecting) {
-                video.play().catch(function() {});
+                playAndReveal(video);
             } else {
                 video.pause();
             }
@@ -49,7 +67,7 @@
         entries.forEach(function(entry) {
             var videos = entry.target.querySelectorAll('video');
             if (entry.isIntersecting) {
-                videos.forEach(function(v) { v.play().catch(function() {}); });
+                videos.forEach(function(v) { playAndReveal(v); });
             } else {
                 videos.forEach(function(v) { v.pause(); });
             }
@@ -61,6 +79,13 @@
 
     document.querySelectorAll(cssAnimatedSelectors).forEach(function(container) {
         containerObserver.observe(container);
+    });
+
+    // Mark already-loaded videos (e.g. from cache)
+    document.querySelectorAll('video').forEach(function(video) {
+        if (video.readyState >= 3) {
+            markVideoLoaded(video);
+        }
     });
 })();
 

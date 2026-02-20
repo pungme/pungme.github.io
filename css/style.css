@@ -29,6 +29,56 @@ html {
     scroll-behavior: smooth;
 }
 
+/* ================================
+   VIDEO LOADING ANIMATION
+   ================================ */
+@keyframes video-pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+/* These containers already have position set in their own rules;
+   ::before pseudo-elements just need the parent to be positioned,
+   which they already are (relative, absolute, etc.) */
+
+.tiktok-video-container::before,
+.grid-video-card::before,
+.floating-video-card::before,
+.review-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.08) 0%, transparent 70%);
+    animation: video-pulse 1.8s ease-in-out infinite;
+    z-index: 1;
+    pointer-events: none;
+    border-radius: inherit;
+    transition: opacity 0.4s ease;
+}
+
+.tiktok-video-container.video-loaded::before,
+.grid-video-card.video-loaded::before,
+.floating-video-card.video-loaded::before,
+.review-card.video-loaded::before {
+    opacity: 0;
+    animation: none;
+}
+
+.tiktok-video-container video,
+.grid-video-card video,
+.floating-video-card video,
+.review-card video {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.tiktok-video-container.video-loaded video,
+.grid-video-card.video-loaded video,
+.floating-video-card.video-loaded video,
+.review-card.video-loaded video {
+    opacity: 1;
+}
+
 body {
     font-family: 'Poppins', -apple-system, sans-serif;
     /* Muted warm neutral gradient */
