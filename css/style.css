@@ -8651,7 +8651,7 @@ section {
     display: grid;
     grid-template-columns: 280px 1fr;
     gap: 48px;
-    align-items: start;
+    align-items: stretch;
     margin-top: 48px;
 }
 
@@ -8756,14 +8756,17 @@ section {
 /* Tab Content */
 .tab-content {
     position: relative;
+    height: 100%;
 }
 
 .tab-pane {
     display: none;
+    height: 100%;
 }
 
 .tab-pane.active {
     display: block;
+    height: 100%;
 }
 
 /* Card animation - only after section has animated in */
@@ -8847,6 +8850,7 @@ section {
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
     border: 2px solid var(--gray-200);
     min-height: 420px;
+    height: 100%;
     overflow: visible;
 }
 
