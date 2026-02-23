@@ -9767,9 +9767,14 @@ section {
         animation: none;
     }
 
-    /* Reduce video grid gap for tighter layout on mobile */
+    /* Reduce video grid gap and slow animation on mobile for performance */
     .video-grid-track {
         gap: 8px;
+        animation-duration: 45s;
+    }
+
+    .grid-video-card video {
+        will-change: auto;
     }
 }
 

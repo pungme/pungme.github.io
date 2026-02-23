@@ -161,11 +161,43 @@ var isMobileDevice = window.matchMedia('(max-width: 768px)').matches;
         containerViewportObserver.observe(container);
     });
 
-    // Periodically check which videos inside on-screen containers are visible
-    setInterval(function() {
-        animatedContainers.forEach(function(container) {
-            if (!animContainerInViewport.get(container)) return;
-            var containerRect = container.getBoundingClientRect();
+    // On mobile, limit how many videos play at once in the video grid
+    // to reduce GPU/CPU load on iOS. Pick 1 per column (3 total).
+    var MOBILE_GRID_MAX = 3;
+
+    function updateAnimatedContainer(container) {
+        if (!animContainerInViewport.get(container)) return;
+        var containerRect = container.getBoundingClientRect();
+        var isVideoGrid = container.classList.contains('video-grid-container');
+
+        if (isMobileDevice && isVideoGrid) {
+            // Mobile video grid: only play 1 video per column (closest to center)
+            var columns = container.querySelectorAll('.video-grid-column');
+            var centerY = containerRect.top + containerRect.height / 2;
+            columns.forEach(function(col) {
+                var bestVideo = null;
+                var bestDist = Infinity;
+                var videos = col.querySelectorAll('video');
+                videos.forEach(function(v) {
+                    var r = v.getBoundingClientRect();
+                    if (r.width === 0 || r.height === 0) return;
+                    var videoCenter = r.top + r.height / 2;
+                    var dist = Math.abs(videoCenter - centerY);
+                    if (isVisibleInContainer(v, containerRect) && dist < bestDist) {
+                        bestDist = dist;
+                        bestVideo = v;
+                    }
+                });
+                videos.forEach(function(v) {
+                    if (v === bestVideo) {
+                        playAndReveal(v);
+                    } else {
+                        v.pause();
+                    }
+                });
+            });
+        } else {
+            // Desktop / non-grid: play all visible videos
             container.querySelectorAll('video').forEach(function(v) {
                 if (isVisibleInContainer(v, containerRect)) {
                     playAndReveal(v);
@@ -173,8 +205,13 @@ var isMobileDevice = window.matchMedia('(max-width: 768px)').matches;
                     v.pause();
                 }
             });
-        });
-    }, 1000);
+        }
+    }
+
+    // Periodically check which videos inside on-screen containers are visible
+    setInterval(function() {
+        animatedContainers.forEach(updateAnimatedContainer);
+    }, isMobileDevice ? 1500 : 1000);
 
     // Mark already-loaded videos (e.g. from cache)
     document.querySelectorAll('video').forEach(function(video) {
