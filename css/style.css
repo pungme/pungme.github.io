@@ -8295,9 +8295,10 @@ section {
     transform: translateZ(0);
 }
 
-/* Reverse scroll for middle column */
+/* Reverse scroll for middle column — use a separate forward keyframe
+   instead of animation-direction: reverse, which iOS composites poorly */
 .video-grid-column[style*="--scroll-direction: -1"] .video-grid-track {
-    animation-direction: reverse;
+    animation-name: scrollVideoGridDown;
 }
 
 @keyframes scrollVideoGrid {
@@ -8306,6 +8307,15 @@ section {
     }
     100% {
         transform: translateY(-50%);
+    }
+}
+
+@keyframes scrollVideoGridDown {
+    0% {
+        transform: translateY(-50%);
+    }
+    100% {
+        transform: translateY(0);
     }
 }
 
