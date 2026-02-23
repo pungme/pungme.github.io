@@ -1,6 +1,11 @@
 // Advertiser Page Specific JavaScript
 
 // ================================
+// MOBILE DETECTION
+// ================================
+var isMobileDevice = window.matchMedia('(max-width: 768px)').matches;
+
+// ================================
 // HERO LOADING STATE
 // ================================
 // Show a skeleton shimmer while hero videos load, then reveal

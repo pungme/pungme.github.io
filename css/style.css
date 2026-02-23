@@ -8280,6 +8280,8 @@ section {
     flex: 1;
     overflow: hidden;
     position: relative;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 .video-grid-track {
@@ -8288,6 +8290,9 @@ section {
     gap: 12px;
     animation: scrollVideoGrid 30s linear infinite;
     animation-direction: normal;
+    will-change: transform;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 /* Reverse scroll for middle column */
@@ -9602,6 +9607,37 @@ section {
         font-size: 28px;
     }
 
+    /* iOS performance: remove expensive effects on mobile */
+    .grid-video-stats {
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: rgba(0, 0, 0, 0.85);
+    }
+
+    /* Remove backdrop-filter from floating cards on mobile */
+    .card-targeting,
+    .card-engagement,
+    .card-ai-quality {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Simplify body gradient animation on mobile */
+    body {
+        animation: none;
+        background: #faf9f8;
+    }
+
+    /* Reduce box-shadow complexity on animated elements */
+    .nav-container-inner {
+        backdrop-filter: blur(20px) saturate(150%);
+        -webkit-backdrop-filter: blur(20px) saturate(150%);
+    }
+
     /* Hero floating cards -- scale down, keep animations */
     .advertiser-visual .card-targeting {
         scale: 0.85;
@@ -9618,6 +9654,23 @@ section {
     .advertiser-visual .card-ai-quality {
         scale: 0.75;
         transform-origin: bottom right;
+    }
+
+    /* Reduce mesh orb blur and disable animation on mobile for performance */
+    .mesh-orb {
+        filter: blur(40px);
+        animation: none;
+    }
+
+    /* Reduce gradient orb blur on mobile */
+    .gradient-orb {
+        filter: blur(60px);
+        animation: none;
+    }
+
+    /* Reduce video grid gap for tighter layout on mobile */
+    .video-grid-track {
+        gap: 8px;
     }
 }
 
