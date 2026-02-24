@@ -9611,17 +9611,10 @@ section {
 
     .industry-tabs {
         flex-direction: row;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        justify-content: flex-start;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 8px;
         padding-bottom: 4px;
-    }
-
-    .industry-tabs::-webkit-scrollbar {
-        display: none;
     }
 
     .tab-btn {
