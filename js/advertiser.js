@@ -828,42 +828,35 @@ document.addEventListener('DOMContentLoaded', function() {
 // ================================
 (function() {
     var hamburger = document.querySelector('.nav-hamburger');
-    var drawer = document.querySelector('.mobile-nav-drawer');
-    var overlay = document.querySelector('.mobile-nav-overlay');
-    if (!hamburger || !drawer || !overlay) return;
+    var mobileMenu = document.querySelector('.nav-mobile-menu');
+    if (!hamburger || !mobileMenu) return;
 
     function openMenu() {
         hamburger.classList.add('is-open');
         hamburger.setAttribute('aria-expanded', 'true');
-        drawer.classList.add('is-open');
-        overlay.classList.add('is-visible');
-        document.body.style.overflow = 'hidden';
+        mobileMenu.classList.add('is-open');
     }
 
     function closeMenu() {
         hamburger.classList.remove('is-open');
         hamburger.setAttribute('aria-expanded', 'false');
-        drawer.classList.remove('is-open');
-        overlay.classList.remove('is-visible');
-        document.body.style.overflow = '';
+        mobileMenu.classList.remove('is-open');
     }
 
     hamburger.addEventListener('click', function() {
-        if (drawer.classList.contains('is-open')) {
+        if (mobileMenu.classList.contains('is-open')) {
             closeMenu();
         } else {
             openMenu();
         }
     });
 
-    overlay.addEventListener('click', closeMenu);
-
-    drawer.querySelectorAll('.mobile-nav-link').forEach(function(link) {
+    mobileMenu.querySelectorAll('.mobile-nav-link').forEach(function(link) {
         link.addEventListener('click', closeMenu);
     });
 
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && drawer.classList.contains('is-open')) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
             closeMenu();
         }
     });
