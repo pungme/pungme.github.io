@@ -90,7 +90,7 @@ body {
     100% { background-position: 0% 50% }
 }
 
-/* Fade-in animation for scroll reveal */
+/* Fade-in animation for scroll reveal (desktop only) */
 .fade-in-element {
     opacity: 0;
     transform: translateY(30px);
@@ -100,6 +100,57 @@ body {
 .fade-in-element.is-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* On mobile: disable ALL scroll-triggered fade-ins — show everything immediately */
+@media (max-width: 768px) {
+    .fade-in-element {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .no-hassle-headline {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .highlight-card {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    /* Case studies section — skip animate-in requirement */
+    .case-studies-section:not(.animate-in) .section-title-center,
+    .case-studies-section:not(.animate-in) .industry-sidebar,
+    .case-studies-section:not(.animate-in) .tab-content,
+    .case-studies-section:not(.animate-in) .case-study-card,
+    .case-studies-section:not(.animate-in) .floating-video-card {
+        opacity: 1;
+    }
+
+    .case-studies-section .section-title-center,
+    .case-studies-section .industry-sidebar,
+    .case-studies-section .tab-content,
+    .case-studies-section .tab-pane.active .case-study-card,
+    .case-studies-section .tab-pane.active .case-study-logo,
+    .case-studies-section .tab-pane.active .case-study-desc,
+    .case-studies-section .tab-pane.active .case-study-metrics .metric,
+    .case-studies-section .tab-pane.active .case-study-info .btn-primary,
+    .case-studies-section .tab-pane.active .floating-video-card {
+        opacity: 1 !important;
+        animation: none !important;
+        transform: none !important;
+    }
+
+    /* Pricing section */
+    .pricing-perk-card {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
 }
 
 ::selection {
@@ -9687,24 +9738,9 @@ section {
         justify-content: center;
     }
 
-    /* Floating videos on mobile */
-    .floating-video-card {
-        width: 120px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-    }
-
-    .floating-video-card video {
-        height: 190px;
-    }
-
-    .floating-video-card:nth-child(1) {
-        top: 10px;
-        right: 10px;
-    }
-
-    .floating-video-card:nth-child(2) {
-        bottom: 10px;
-        left: 10px;
+    /* Hide floating videos on mobile */
+    .floating-videos {
+        display: none;
     }
 
     .brands-carousel::before,
@@ -9878,15 +9914,6 @@ section {
 
     .case-study-visual {
         height: 180px;
-    }
-
-    .floating-video-card {
-        width: 100px;
-        border-width: 2px;
-    }
-
-    .floating-video-card video {
-        height: 160px;
     }
 
     .case-study-info {

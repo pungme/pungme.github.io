@@ -5360,33 +5360,41 @@
         // Analytics Carousel - Animate on scroll
         const acWrapper = document.querySelector('.ac-wrapper');
         if (acWrapper) {
-            const acObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('ac-animate');
-                        acObserver.unobserve(entry.target);
-                    }
+            if (window.matchMedia('(max-width: 768px)').matches) {
+                acWrapper.classList.add('ac-animate');
+            } else {
+                const acObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('ac-animate');
+                            acObserver.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.2
                 });
-            }, {
-                threshold: 0.2
-            });
-            acObserver.observe(acWrapper);
+                acObserver.observe(acWrapper);
+            }
         }
 
         // Bento cards - Animate on scroll
         const bentoCards = document.querySelectorAll('.bento-card');
         if (bentoCards.length > 0) {
-            const bentoObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        bentoObserver.unobserve(entry.target);
-                    }
+            if (window.matchMedia('(max-width: 768px)').matches) {
+                bentoCards.forEach(card => card.classList.add('visible'));
+            } else {
+                const bentoObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            bentoObserver.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.2
                 });
-            }, {
-                threshold: 0.2
-            });
-            bentoCards.forEach(card => bentoObserver.observe(card));
+                bentoCards.forEach(card => bentoObserver.observe(card));
+            }
         }
 
         // Buyout Modal

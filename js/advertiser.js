@@ -321,11 +321,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Case Studies Section - Animate on scroll
-    const caseStudiesSection = document.querySelector('.case-studies-section');
-    let caseStudiesAnimated = false;
+    // On mobile: skip scroll-triggered fade-ins — show everything immediately
+    if (isMobileDevice) {
+        document.querySelectorAll('.case-studies-section, [data-scroll]').forEach(function(el) {
+            el.classList.add('animate-in');
+        });
+        document.querySelectorAll('.pricing-section, .no-hassle-section').forEach(function(el) {
+            el.classList.add('in-view');
+        });
+        startAutoProgress();
+    }
 
-    if (caseStudiesSection) {
+    // Case Studies Section - Animate on scroll (desktop only)
+    const caseStudiesSection = document.querySelector('.case-studies-section');
+    let caseStudiesAnimated = isMobileDevice;
+
+    if (caseStudiesSection && !isMobileDevice) {
         const caseStudiesObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && !caseStudiesAnimated) {
@@ -360,29 +371,31 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Intersection Observer for animations
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
+    // Intersection Observer for animations (desktop only)
+    if (!isMobileDevice) {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-            }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements with data-scroll attribute
+        document.querySelectorAll('[data-scroll]').forEach(el => {
+            observer.observe(el);
         });
-    }, observerOptions);
+    }
 
-    // Observe elements with data-scroll attribute
-    document.querySelectorAll('[data-scroll]').forEach(el => {
-        observer.observe(el);
-    });
-
-    // Pricing Section - Animate killed prices and cards on scroll
+    // Pricing Section - Animate killed prices and cards on scroll (desktop only)
     const pricingSection = document.querySelector('.pricing-section');
-    if (pricingSection) {
+    if (pricingSection && !isMobileDevice) {
         const pricingObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -395,9 +408,9 @@ document.addEventListener('DOMContentLoaded', function() {
         pricingObserver.observe(pricingSection);
     }
 
-    // No Hassle Section - Animate headlines on scroll
+    // No Hassle Section - Animate headlines on scroll (desktop only)
     const noHassleSection = document.querySelector('.no-hassle-section');
-    if (noHassleSection) {
+    if (noHassleSection && !isMobileDevice) {
         const sectionObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -739,17 +752,31 @@ function initScrollAnimation() {
         }
     }
 
-    // Throttle scroll events for performance
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-        if (!ticking) {
-            requestAnimationFrame(() => {
+    // On mobile, use rAF polling to work around iOS Safari not firing
+    // scroll events during momentum/inertial scrolling
+    if (isMobileDevice) {
+        var lastScrollY = -1;
+        function pollScroll() {
+            if (window.scrollY !== lastScrollY) {
+                lastScrollY = window.scrollY;
                 handleScroll();
-                ticking = false;
-            });
-            ticking = true;
+            }
+            requestAnimationFrame(pollScroll);
         }
-    });
+        requestAnimationFrame(pollScroll);
+    } else {
+        // Desktop: throttle scroll events for performance
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    handleScroll();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    }
 
     // Initial call
     handleScroll();
