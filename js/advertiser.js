@@ -780,6 +780,80 @@ function initScrollAnimation() {
 
     // Initial call
     handleScroll();
+
+    // Mobile step nav buttons
+    if (isMobileDevice) {
+        var prevBtn = scrollSection.querySelector('.scroll-step-prev');
+        var nextBtn = scrollSection.querySelector('.scroll-step-next');
+        var stepCurrent = scrollSection.querySelector('.scroll-step-current');
+        if (!prevBtn || !nextBtn) return;
+
+        // 4 visible steps — progress set to where each step is FULLY complete
+        var steps = [
+            { progress: 0.18 },   // Step 1: Briefing + Product + Targeting all visible
+            { progress: 0.48 },   // Step 2: Campaign tile + all videos exploded
+            { progress: 0.80 },   // Step 3: Review cards with both swipes complete
+            { progress: 0.95 }    // Step 4: All analytics tiles visible
+        ];
+        var totalSteps = steps.length;
+
+        function getCurrentStep() {
+            var sectionTop = scrollSection.offsetTop;
+            var sectionHeight = scrollContainer.offsetHeight;
+            var viewportHeight = window.innerHeight;
+            var scrollableDistance = sectionHeight - viewportHeight;
+            var progress = Math.max(0, Math.min(1, (window.scrollY - sectionTop) / scrollableDistance));
+
+            var current = 0;
+            for (var i = steps.length - 1; i >= 0; i--) {
+                if (progress >= steps[i].progress - 0.03) {
+                    current = i;
+                    break;
+                }
+            }
+            return current;
+        }
+
+        function updateStepNav() {
+            var current = getCurrentStep();
+            stepCurrent.textContent = current + 1;
+            prevBtn.disabled = current === 0;
+            nextBtn.disabled = current === totalSteps - 1;
+        }
+
+        function scrollToStep(stepIndex) {
+            var sectionTop = scrollSection.offsetTop;
+            var sectionHeight = scrollContainer.offsetHeight;
+            var viewportHeight = window.innerHeight;
+            var scrollableDistance = sectionHeight - viewportHeight;
+            var targetScroll = sectionTop + (steps[stepIndex].progress * scrollableDistance);
+            window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+        }
+
+        prevBtn.addEventListener('click', function() {
+            var current = getCurrentStep();
+            if (current > 0) scrollToStep(current - 1);
+        });
+
+        nextBtn.addEventListener('click', function() {
+            var current = getCurrentStep();
+            if (current < totalSteps - 1) scrollToStep(current + 1);
+        });
+
+        // Update button states as user scrolls
+        var navTicking = false;
+        function onScrollUpdateNav() {
+            if (!navTicking) {
+                requestAnimationFrame(function() {
+                    updateStepNav();
+                    navTicking = false;
+                });
+                navTicking = true;
+            }
+        }
+        window.addEventListener('scroll', onScrollUpdateNav, { passive: true });
+        updateStepNav();
+    }
 }
 
 // ================================
