@@ -3771,6 +3771,10 @@ body {
     align-items: flex-start;
     gap: 4px;
     pointer-events: none;
+    /* Force GPU compositing layer so iOS doesn't render video on top */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    z-index: 2;
 }
 
 .video-overlay > * {
@@ -3788,6 +3792,9 @@ body {
     filter: brightness(0) invert(1);
     opacity: 0.9;
     pointer-events: none;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    z-index: 3;
 }
 
 .tiktok-link {
@@ -8350,6 +8357,10 @@ section {
     color: white;
     font-size: 13px;
     font-weight: 600;
+    /* Force GPU compositing layer so iOS doesn't render video on top */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    z-index: 2;
 }
 
 .grid-video-stats::before {
