@@ -851,8 +851,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    mobileMenu.querySelectorAll('.mobile-nav-link').forEach(function(link) {
+    mobileMenu.querySelectorAll('.mobile-nav-link, .mobile-nav-cta').forEach(function(link) {
         link.addEventListener('click', closeMenu);
+    });
+
+    // Close when tapping outside
+    document.addEventListener('click', function(e) {
+        if (mobileMenu.classList.contains('is-open') && !e.target.closest('.nav-container')) {
+            closeMenu();
+        }
     });
 
     document.addEventListener('keydown', function(e) {
