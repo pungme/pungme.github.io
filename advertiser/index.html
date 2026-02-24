@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    <!-- Desktop Language Switcher (top right) -->
+    <div class="desktop-lang-switcher">
+        <button data-lang-switch="en" class="desktop-lang-btn">EN</button>
+        <span class="desktop-lang-divider">|</span>
+        <button data-lang-switch="de" class="desktop-lang-btn">DE</button>
+    </div>
+
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
@@ -18,11 +25,11 @@
                     <img src="../assets/images/logo.webp" alt="WePush Logo" class="logo-mark">
                 </a>
                 <div class="nav-menu">
-                    <a href="#how-it-works-scroll" class="nav-link">How It Works</a>
-                    <a href="#case-studies" class="nav-link">Case Studies</a>
-                    <a href="#how-it-works" class="nav-link">Features</a>
-                    <a href="#pricing" class="nav-link">Pricing</a>
-                    <a href="https://app.songpush.com" class="nav-link nav-cta">Start for Free</a>
+                    <a href="#how-it-works-scroll" class="nav-link" data-i18n="nav.howItWorks">How It Works</a>
+                    <a href="#case-studies" class="nav-link" data-i18n="nav.caseStudies">Case Studies</a>
+                    <a href="#how-it-works" class="nav-link" data-i18n="nav.features">Features</a>
+                    <a href="#pricing" class="nav-link" data-i18n="nav.pricing">Pricing</a>
+                    <a href="https://app.songpush.com" class="nav-link nav-cta" data-i18n="nav.startFree">Start for Free</a>
                 </div>
                 <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
                     <span class="hamburger-line"></span>
@@ -31,11 +38,16 @@
                 </button>
             </div>
             <div class="nav-mobile-menu">
-                <a href="#how-it-works-scroll" class="mobile-nav-link">How It Works</a>
-                <a href="#case-studies" class="mobile-nav-link">Case Studies</a>
-                <a href="#how-it-works" class="mobile-nav-link">Features</a>
-                <a href="#pricing" class="mobile-nav-link">Pricing</a>
-                <a href="https://app.songpush.com" class="mobile-nav-cta">Start for Free</a>
+                <a href="#how-it-works-scroll" class="mobile-nav-link" data-i18n="nav.howItWorks">How It Works</a>
+                <a href="#case-studies" class="mobile-nav-link" data-i18n="nav.caseStudies">Case Studies</a>
+                <a href="#how-it-works" class="mobile-nav-link" data-i18n="nav.features">Features</a>
+                <a href="#pricing" class="mobile-nav-link" data-i18n="nav.pricing">Pricing</a>
+                <a href="https://app.songpush.com" class="mobile-nav-cta" data-i18n="nav.startFree">Start for Free</a>
+                <div class="mobile-lang-switcher">
+                    <button data-lang-switch="en" class="mobile-lang-btn">EN</button>
+                    <span class="mobile-lang-divider">|</span>
+                    <button data-lang-switch="de" class="mobile-lang-btn">DE</button>
+                </div>
             </div>
         </div>
     </nav>
@@ -51,17 +63,17 @@
             <div class="hero-text-content">
                 <div class="hero-badge">
                     <span class="badge-icon">🚀</span>
-                    <span class="badge-text">For Brands & Advertisers</span>
+                    <span class="badge-text" data-i18n="hero.badge">For Brands & Advertisers</span>
                 </div>
-                <h1 class="hero-headline">
+                <h1 class="hero-headline" data-i18n="hero.title" data-i18n-html>
                     Influencer Marketing built for <span class="gradient-text-static">real scale.</span>
                 </h1>
-                <p class="hero-subheadline">
+                <p class="hero-subheadline" data-i18n="hero.subtitle">
                     Brief once, activate hundreds of creators per campaign and supercharge your organic reach. Manage every step in a single platform.
                 </p>
                 <div class="hero-actions">
                     <a href="https://app.songpush.com" class="btn-primary btn-large btn-gradient">
-                        <span>Get Started</span>
+                        <span data-i18n="hero.cta1">Get Started</span>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
@@ -73,7 +85,7 @@
                             <line x1="8" y1="2" x2="8" y2="6"/>
                             <line x1="3" y1="10" x2="21" y2="10"/>
                         </svg>
-                        <span>Book your Demo</span>
+                        <span data-i18n="hero.cta2">Book your Demo</span>
                     </a>
                 </div>
             </div>
@@ -343,7 +355,7 @@
                 <div class="card-targeting">
                     <div class="targeting-header">
                         <span class="targeting-icon">🎯</span>
-                        <span>Creator Targeting</span>
+                        <span data-i18n="hero.targeting">Creator Targeting</span>
                     </div>
                     <div class="targeting-map">
                         <img src="../assets/images/world.svg" alt="World Map" class="world-map-img">
@@ -354,7 +366,7 @@
                         <div class="location-pin" style="top: 25%; left: 70%;"></div>
                     </div>
                     <div class="targeting-tags">
-                        <span class="targeting-tag">Fashion</span>
+                        <span class="targeting-tag" data-i18n="hero.targetingTag1">Fashion</span>
                         <span class="targeting-tag">18-24</span>
                         <!-- <span class="targeting-tag">10K+</span> -->
                         <span class="targeting-tag">📍 EU</span>
@@ -364,7 +376,7 @@
                 <!-- Floating Card: Engagement -->
                 <div class="card-engagement">
                     <div class="engagement-header">
-                        <span class="engagement-title">Engagement</span>
+                        <span class="engagement-title" data-i18n="hero.engagement">Engagement</span>
                         <span class="engagement-percent">+127%</span>
                     </div>
                     <div class="engagement-bars">
@@ -409,7 +421,7 @@
                 <!-- Floating Card: AI Quality -->
                 <div class="card-ai-quality">
                     <div class="ai-quality-header">
-                        <span class="ai-quality-title">AI<br>Quality<br>Analysis</span>
+                        <span class="ai-quality-title" data-i18n="hero.aiQuality" data-i18n-html>AI<br>Quality<br>Analysis</span>
                         <span class="ai-quality-icon">
                             <svg viewBox="0 0 24 24" fill="none">
                                 <path d="M12 2L9.5 9.5 2 12l7.5 2.5L12 22l2.5-7.5L22 12l-7.5-2.5L12 2z" fill="#FE3842"/>
@@ -433,7 +445,7 @@
     <!-- Trusted Brands -->
     <section class="trusted-brands" id="brands">
         <div class="container">
-            <p class="brands-title">Trusted by Brands of all Industries & Sizes with scalable Creator Campaigns</p>
+            <p class="brands-title" data-i18n="brands.title">Trusted by Brands of all Industries & Sizes with scalable Creator Campaigns</p>
         </div>
         <div class="brands-carousel">
             <div class="brands-carousel-track">
@@ -901,14 +913,14 @@
         <div class="scroll-container">
             <div class="scroll-sticky">
                 <!-- Section Title -->
-                <div class="scroll-section-title">How It Works</div>
+                <div class="scroll-section-title" data-i18n="howItWorks.sectionTitle">How It Works</div>
 
                 <!-- Phase Labels -->
                 <div class="phase-label">
-                    <span class="phase-text" data-phase="1">1. Create <span class="accent">Briefing</span> & Target <span class="accent">Creators</span></span>
-                    <span class="phase-text" data-phase="3">2. Launch <span class="accent">Campaign</span> & Content Goes <span class="accent">Live</span></span>
-                    <span class="phase-text" data-phase="4">3. Review & Only <span class="accent">Pay</span> for What You <span class="accent">Love</span></span>
-                    <span class="phase-text" data-phase="5">4. Track <span class="accent">Performance</span></span>
+                    <span class="phase-text" data-phase="1" data-i18n="howItWorks.phase1" data-i18n-html>1. Create <span class="accent">Briefing</span> & Target <span class="accent">Creators</span></span>
+                    <span class="phase-text" data-phase="3" data-i18n="howItWorks.phase2" data-i18n-html>2. Launch <span class="accent">Campaign</span> & Content Goes <span class="accent">Live</span></span>
+                    <span class="phase-text" data-phase="4" data-i18n="howItWorks.phase3" data-i18n-html>3. Review & Only <span class="accent">Pay</span> for What You <span class="accent">Love</span></span>
+                    <span class="phase-text" data-phase="5" data-i18n="howItWorks.phase4" data-i18n-html>4. Track <span class="accent">Performance</span></span>
                 </div>
 
                 <!-- Animation Stage -->
@@ -917,15 +929,15 @@
                     <div class="tile tile-briefing" data-tile="briefing">
                         <div class="tile-header">
                             <span class="tile-icon">📝</span>
-                            <span class="tile-title">Campaign Briefing</span>
+                            <span class="tile-title" data-i18n="howItWorks.briefingTitle">Campaign Briefing</span>
                         </div>
                         <div class="tile-content">
                             <div class="briefing-text">
-                                <p class="briefing-instruction">Create an authentic review showcasing the product in your daily routine.</p>
+                                <p class="briefing-instruction" data-i18n="howItWorks.briefingInstruction">Create an authentic review showcasing the product in your daily routine.</p>
                                 <ul class="briefing-list">
-                                    <li>Show how you use it daily</li>
-                                    <li>Highlight your favorite features</li>
-                                    <li>Share your honest experience</li>
+                                    <li data-i18n="howItWorks.briefingList1">Show how you use it daily</li>
+                                    <li data-i18n="howItWorks.briefingList2">Highlight your favorite features</li>
+                                    <li data-i18n="howItWorks.briefingList3">Share your honest experience</li>
                                 </ul>
                             </div>
                             <div class="briefing-videos">
@@ -933,13 +945,13 @@
                                     <video poster="../assets/videos/inao/INAO_5444_@hundred54cm.jpg" muted loop playsinline preload="none">
                                         <source src="../assets/videos/inao/INAO_5444_@hundred54cm.mp4" type="video/mp4">
                                     </video>
-                                    <span class="video-label">Reference 1</span>
+                                    <span class="video-label" data-i18n="howItWorks.reference1">Reference 1</span>
                                 </div>
                                 <div class="briefing-video">
                                     <video poster="../assets/videos/inao/INAO_5444_@paulaalinda.jpg" muted loop playsinline preload="none">
                                         <source src="../assets/videos/inao/INAO_5444_@paulaalinda.mp4" type="video/mp4">
                                     </video>
-                                    <span class="video-label">Reference 2</span>
+                                    <span class="video-label" data-i18n="howItWorks.reference2">Reference 2</span>
                                 </div>
                             </div>
                         </div>
@@ -948,21 +960,21 @@
                     <div class="tile tile-product" data-tile="product">
                         <div class="tile-header">
                             <span class="tile-icon">📦</span>
-                            <span class="tile-title">Your Products</span>
+                            <span class="tile-title" data-i18n="howItWorks.productsTitle">Your Products</span>
                         </div>
                         <div class="tile-content">
                             <div class="products-grid">
                                 <div class="product-item">
                                     <img src="../assets/images/products/product1_Mizellenwasser.webp" alt="Micellar Water" class="product-image" loading="lazy">
-                                    <span class="product-name">Micellar Water</span>
+                                    <span class="product-name" data-i18n="howItWorks.product1">Micellar Water</span>
                                 </div>
                                 <div class="product-item">
                                     <img src="../assets/images/products/product2_PimplePatches.webp" alt="Pimple Patches" class="product-image" loading="lazy">
-                                    <span class="product-name">Pimple Patches</span>
+                                    <span class="product-name" data-i18n="howItWorks.product2">Pimple Patches</span>
                                 </div>
                                 <div class="product-item">
                                     <img src="../assets/images/products/product3_HypochlorusSpray.webp" alt="Hypochlorus Spray" class="product-image" loading="lazy">
-                                    <span class="product-name">Hypochlorus Spray</span>
+                                    <span class="product-name" data-i18n="howItWorks.product3">Hypochlorus Spray</span>
                                 </div>
                             </div>
                         </div>
@@ -972,20 +984,20 @@
                     <div class="tile tile-targeting" data-tile="targeting">
                         <div class="tile-header">
                             <span class="tile-icon">🎯</span>
-                            <span class="tile-title">Creator Targeting</span>
+                            <span class="tile-title" data-i18n="howItWorks.targetingTitle">Creator Targeting</span>
                         </div>
                         <div class="tile-content">
                             <div class="targeting-filters">
                                 <div class="filter-group">
-                                    <span class="filter-label">Niche</span>
+                                    <span class="filter-label" data-i18n="howItWorks.niche">Niche</span>
                                     <div class="filter-tags">
-                                        <span class="filter-tag active">Lifestyle</span>
-                                        <span class="filter-tag">Fashion</span>
-                                        <span class="filter-tag">Fitness</span>
+                                        <span class="filter-tag active" data-i18n="howItWorks.lifestyle">Lifestyle</span>
+                                        <span class="filter-tag" data-i18n="howItWorks.fashion">Fashion</span>
+                                        <span class="filter-tag" data-i18n="howItWorks.fitness">Fitness</span>
                                     </div>
                                 </div>
                                 <div class="filter-group">
-                                    <span class="filter-label">Audience Age</span>
+                                    <span class="filter-label" data-i18n="howItWorks.audienceAge">Audience Age</span>
                                     <div class="filter-tags">
                                         <span class="filter-tag active">18-24</span>
                                         <span class="filter-tag active">25-34</span>
@@ -993,20 +1005,20 @@
                                     </div>
                                 </div>
                                 <div class="filter-group">
-                                    <span class="filter-label">Location</span>
+                                    <span class="filter-label" data-i18n="howItWorks.location">Location</span>
                                     <div class="filter-tags">
-                                        <span class="filter-tag active">🇩🇪 Germany</span>
-                                        <span class="filter-tag">🇬🇧 United Kingdom</span>
-                                        <span class="filter-tag">🌍 Worldwide</span>
+                                        <span class="filter-tag active" data-i18n="howItWorks.germany">🇩🇪 Germany</span>
+                                        <span class="filter-tag" data-i18n="howItWorks.uk">🇬🇧 United Kingdom</span>
+                                        <span class="filter-tag" data-i18n="howItWorks.worldwide">🌍 Worldwide</span>
                                     </div>
                                 </div>
                                 <div class="filter-group">
-                                    <span class="filter-label">Creator Size</span>
+                                    <span class="filter-label" data-i18n="howItWorks.creatorSize">Creator Size</span>
                                     <div class="filter-tags">
-                                        <span class="filter-tag active">🌱 Nanos</span>
-                                        <span class="filter-tag active">⭐ Micros</span>
-                                        <span class="filter-tag">🔥 Macros</span>
-                                        <span class="filter-tag">👑 Megas</span>
+                                        <span class="filter-tag active" data-i18n="howItWorks.nanos">🌱 Nanos</span>
+                                        <span class="filter-tag active" data-i18n="howItWorks.micros">⭐ Micros</span>
+                                        <span class="filter-tag" data-i18n="howItWorks.macros">🔥 Macros</span>
+                                        <span class="filter-tag" data-i18n="howItWorks.megas">👑 Megas</span>
                                     </div>
                                 </div>
                             </div>
@@ -1029,7 +1041,7 @@
                         </div>
                         <div class="tile-header">
                             <span class="tile-icon">🚀</span>
-                            <span class="tile-title">Campaign Live</span>
+                            <span class="tile-title" data-i18n="howItWorks.campaignLive">Campaign Live</span>
                         </div>
                         <div class="tile-content">
                             <div class="campaign-products">
@@ -1040,11 +1052,11 @@
                             <div class="campaign-details">
                                 <div class="campaign-status">
                                     <div class="status-indicator"></div>
-                                    <span>Active</span>
+                                    <span data-i18n="howItWorks.active">Active</span>
                                 </div>
                                 <div class="campaign-info">
-                                    <span class="campaign-name">Summer Launch 2025</span>
-                                    <span class="campaign-creators">247 creators participating</span>
+                                    <span class="campaign-name" data-i18n="howItWorks.campaignName">Summer Launch 2025</span>
+                                    <span class="campaign-creators" data-i18n="howItWorks.campaignCreators">247 creators participating</span>
                                 </div>
                             </div>
                         </div>
@@ -1124,7 +1136,7 @@
                                 </video>
                                 <div class="card-overlay card-overlay-decline">
                                     <span class="overlay-icon">✗</span>
-                                    <span class="overlay-text">Declined</span>
+                                    <span class="overlay-text" data-i18n="howItWorks.declined">Declined</span>
                                 </div>
                             </div>
                             <!-- Card that will be APPROVED (shows first) -->
@@ -1134,7 +1146,7 @@
                                 </video>
                                 <div class="card-overlay card-overlay-approve">
                                     <span class="overlay-icon">✓</span>
-                                    <span class="overlay-text">Approved</span>
+                                    <span class="overlay-text" data-i18n="howItWorks.approved">Approved</span>
                                 </div>
                             </div>
                         </div>
@@ -1150,7 +1162,7 @@
                                 </div>
                                 <span class="analytics-trend positive">+245%</span>
                             </div>
-                            <div class="analytics-label">Total Views</div>
+                            <div class="analytics-label" data-i18n="howItWorks.totalViews">Total Views</div>
                             <div class="analytics-value">12.4M</div>
                             <div class="analytics-graph">
                                 <svg viewBox="0 0 120 50" preserveAspectRatio="none">
@@ -1173,7 +1185,7 @@
                                 </div>
                                 <span class="analytics-trend positive">-28%</span>
                             </div>
-                            <div class="analytics-label">Cost per Mille</div>
+                            <div class="analytics-label" data-i18n="howItWorks.costPerMille">Cost per Mille</div>
                             <div class="analytics-value">$2.40</div>
                             <div class="analytics-graph">
                                 <svg viewBox="0 0 120 50" preserveAspectRatio="none">
@@ -1194,7 +1206,7 @@
                                 </div>
                                 <span class="analytics-trend positive">+67%</span>
                             </div>
-                            <div class="analytics-label">Engagement Rate</div>
+                            <div class="analytics-label" data-i18n="howItWorks.engagementRate">Engagement Rate</div>
                             <div class="analytics-value">8.2%</div>
                             <div class="analytics-graph graph-donut">
                                 <svg viewBox="0 0 60 60">
@@ -1211,7 +1223,7 @@
                                 </div>
                                 <span class="analytics-trend positive">+312%</span>
                             </div>
-                            <div class="analytics-label">Comments</div>
+                            <div class="analytics-label" data-i18n="howItWorks.comments">Comments</div>
                             <div class="analytics-value">45.2K</div>
                             <div class="analytics-graph">
                                 <svg viewBox="0 0 120 50" preserveAspectRatio="none">
@@ -1232,7 +1244,7 @@
                                 </div>
                                 <span class="analytics-trend positive">+198%</span>
                             </div>
-                            <div class="analytics-label">Shares</div>
+                            <div class="analytics-label" data-i18n="howItWorks.shares">Shares</div>
                             <div class="analytics-value">28.1K</div>
                             <div class="analytics-graph">
                                 <svg viewBox="0 0 120 50" preserveAspectRatio="none">
@@ -1256,7 +1268,7 @@
                                 </div>
                                 <span class="analytics-trend positive">-34%</span>
                             </div>
-                            <div class="analytics-label">Cost per Click</div>
+                            <div class="analytics-label" data-i18n="howItWorks.costPerClick">Cost per Click</div>
                             <div class="analytics-value">$0.12</div>
                             <div class="analytics-graph">
                                 <svg viewBox="0 0 120 50" preserveAspectRatio="none">
@@ -1279,7 +1291,7 @@
                                 </div>
                                 <span class="analytics-trend positive">+156%</span>
                             </div>
-                            <div class="analytics-label">Click-through Rate</div>
+                            <div class="analytics-label" data-i18n="howItWorks.clickThroughRate">Click-through Rate</div>
                             <div class="analytics-value">4.8%</div>
                             <div class="analytics-graph">
                                 <svg viewBox="0 0 120 50" preserveAspectRatio="none">
@@ -1303,7 +1315,7 @@
                                 </div>
                                 <span class="analytics-trend positive">+89%</span>
                             </div>
-                            <div class="analytics-label">Return on Ad Spend</div>
+                            <div class="analytics-label" data-i18n="howItWorks.returnOnAdSpend">Return on Ad Spend</div>
                             <div class="analytics-value">3.2x</div>
                             <div class="analytics-graph">
                                 <svg viewBox="0 0 120 50" preserveAspectRatio="none">
@@ -1323,7 +1335,7 @@
 
                 <!-- Scroll hint -->
                 <div class="scroll-hint">
-                    <span>Scroll to explore</span>
+                    <span data-i18n="howItWorks.scrollHint">Scroll to explore</span>
                     <div class="scroll-arrow">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M12 5v14M5 12l7 7 7-7"/>
@@ -1343,23 +1355,23 @@
         <div class="container">
             <div class="buyout-content">
                 <div class="buyout-text">
-                    <span class="new-badge">New</span>
-                    <h2 class="section-title">Instant Content <span class="text-accent">Buyouts</span> now live on WePush</h2>
-                    <p class="buyout-description">
+                    <span class="new-badge" data-i18n="buyout.badge">New</span>
+                    <h2 class="section-title" data-i18n="buyout.title" data-i18n-html>Instant Content <span class="text-accent">Buyouts</span> now live on WePush</h2>
+                    <p class="buyout-description" data-i18n="buyout.desc">
                         Buyout any video you like with one click from a campaign. You set the duration, channels and timing!
                     </p>
                     <ul class="buyout-benefits">
                         <li>
                             <span class="benefit-icon">⚡</span>
-                            <span class="benefit-text">No more back-and-forth creator negotiations, instant access to the asset</span>
+                            <span class="benefit-text" data-i18n="buyout.benefit1">No more back-and-forth creator negotiations, instant access to the asset</span>
                         </li>
                         <li>
                             <span class="benefit-icon">✅</span>
-                            <span class="benefit-text">No last-minute rejections or chasing creators for missing assets</span>
+                            <span class="benefit-text" data-i18n="buyout.benefit2">No last-minute rejections or chasing creators for missing assets</span>
                         </li>
                         <li>
                             <span class="benefit-icon">💰</span>
-                            <span class="benefit-text">Fair pricing - depending on the desired usage period and channels</span>
+                            <span class="benefit-text" data-i18n="buyout.benefit3">Fair pricing - depending on the desired usage period and channels</span>
                         </li>
                     </ul>
                 </div>
@@ -1367,7 +1379,7 @@
                     <div class="buyout-teaser">
                         <img src="../assets/images/products/Teaser_Image_Buyout.png" alt="Buyout Feature Preview" class="buyout-teaser-img" loading="lazy">
                         <button class="btn-primary btn-large btn-gradient buyout-cta-btn" id="openBuyoutModal">
-                            <span>See How It Works</span>
+                            <span data-i18n="buyout.cta">See How It Works</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M5 12h14M12 5l7 7-7 7"/>
                             </svg>
@@ -1396,43 +1408,43 @@
     <!-- Case Studies / Industry Tabs -->
     <section class="case-studies-section" id="case-studies">
         <div class="container">
-            <h2 class="section-title-center">This is what <span class="text-accent">success</span> looks like.</h2>
+            <h2 class="section-title-center" data-i18n="caseStudies.title" data-i18n-html>This is what <span class="text-accent">success</span> looks like.</h2>
 
             <div class="case-studies-layout">
                 <div class="industry-sidebar">
-                    <p class="industry-sidebar-title">See results in your industry</p>
+                    <p class="industry-sidebar-title" data-i18n="caseStudies.sidebarTitle">See results in your industry</p>
                     <div class="industry-tabs">
                         <button class="tab-btn active" data-tab="beauty">
-                            <span class="tab-title">Beauty</span>
-                            <span class="tab-subtitle">Cosmetics & Skincare</span>
+                            <span class="tab-title" data-i18n="caseStudies.beauty">Beauty</span>
+                            <span class="tab-subtitle" data-i18n="caseStudies.beautySubtitle">Cosmetics & Skincare</span>
                         </button>
                         <button class="tab-btn" data-tab="travel">
-                            <span class="tab-title">Travel</span>
-                            <span class="tab-subtitle">Trips & Transportation</span>
+                            <span class="tab-title" data-i18n="caseStudies.travel">Travel</span>
+                            <span class="tab-subtitle" data-i18n="caseStudies.travelSubtitle">Trips & Transportation</span>
                         </button>
                         <button class="tab-btn" data-tab="food">
-                            <span class="tab-title">Food & Beverage</span>
-                            <span class="tab-subtitle">Restaurants & Delivery</span>
+                            <span class="tab-title" data-i18n="caseStudies.food">Food & Beverage</span>
+                            <span class="tab-subtitle" data-i18n="caseStudies.foodSubtitle">Restaurants & Delivery</span>
                         </button>
                         <button class="tab-btn" data-tab="movies">
-                            <span class="tab-title">Movie & TV Series</span>
-                            <span class="tab-subtitle">Films & Entertainment</span>
+                            <span class="tab-title" data-i18n="caseStudies.movies">Movie & TV Series</span>
+                            <span class="tab-subtitle" data-i18n="caseStudies.moviesSubtitle">Films & Entertainment</span>
                         </button>
                         <button class="tab-btn" data-tab="retail">
-                            <span class="tab-title">Retail</span>
-                            <span class="tab-subtitle">Shopping & Commerce</span>
+                            <span class="tab-title" data-i18n="caseStudies.retail">Retail</span>
+                            <span class="tab-subtitle" data-i18n="caseStudies.retailSubtitle">Shopping & Commerce</span>
                         </button>
                         <button class="tab-btn" data-tab="music">
-                            <span class="tab-title">Music</span>
-                            <span class="tab-subtitle">Artists & Labels</span>
+                            <span class="tab-title" data-i18n="caseStudies.music">Music</span>
+                            <span class="tab-subtitle" data-i18n="caseStudies.musicSubtitle">Artists & Labels</span>
                         </button>
                         <button class="tab-btn" data-tab="dating">
-                            <span class="tab-title">Dating</span>
-                            <span class="tab-subtitle">Apps & Matchmaking</span>
+                            <span class="tab-title" data-i18n="caseStudies.dating">Dating</span>
+                            <span class="tab-subtitle" data-i18n="caseStudies.datingSubtitle">Apps & Matchmaking</span>
                         </button>
                         <button class="tab-btn" data-tab="fitness">
-                            <span class="tab-title">Fitness</span>
-                            <span class="tab-subtitle">Sports & Running</span>
+                            <span class="tab-title" data-i18n="caseStudies.fitnessTab">Fitness</span>
+                            <span class="tab-subtitle" data-i18n="caseStudies.fitnessSubtitle">Sports & Running</span>
                         </button>
                     </div>
                 </div>
@@ -1444,27 +1456,27 @@
                     <div class="case-study-card">
                         <div class="case-study-info">
                             <img src="../assets/images/brands/brand_logo_cosnova.png" alt="Cosnova" class="case-study-logo" loading="lazy">
-                            <p class="case-study-desc">See how INAO by Essence kickstarted their launch of three new products by generating authentic & organic creator videos with the SongPush platform. </p>
+                            <p class="case-study-desc" data-i18n="caseStudies.beautyDesc">See how INAO by Essence kickstarted their launch of three new products by generating authentic & organic creator videos with the SongPush platform. </p>
                             <div class="case-study-metrics">
                                 <div class="metric">
-                                    <span class="metric-label">Total Views</span>
+                                    <span class="metric-label" data-i18n="caseStudies.totalViews">Total Views</span>
                                     <span class="metric-value">~750,000</span>
                                 </div>
                                 <div class="metric">
-                                    <span class="metric-label">Creator Videos</span>
+                                    <span class="metric-label" data-i18n="caseStudies.creatorVideos">Creator Videos</span>
                                     <span class="metric-value">54+</span>
                                 </div>
                                 <div class="metric">
-                                    <span class="metric-label">CPM</span>
+                                    <span class="metric-label" data-i18n="caseStudies.cpm">CPM</span>
                                     <span class="metric-value">~20€</span>
                                 </div>
                                 <div class="metric">
-                                    <span class="metric-label">First Video Live</span>
+                                    <span class="metric-label" data-i18n="caseStudies.firstVideoLive">First Video Live</span>
                                     <span class="metric-value">12 Hours</span>
                                 </div>
                             </div>
                             <a href="https://songpush.storydoc.com/9rNYtV" target="_blank" class="btn-primary btn-gradient">
-                                <span>Learn more</span>
+                                <span data-i18n="caseStudies.learnMore">Learn more</span>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M5 12h14M12 5l7 7-7 7"/>
                                 </svg>
@@ -1501,27 +1513,27 @@
                     <div class="case-study-card">
                         <div class="case-study-info">
                             <img src="../assets/images/brands/brand_logo_omio.png" alt="OMIO" class="case-study-logo" loading="lazy" style="margin-left:-50px">
-                            <p class="case-study-desc">See how OMIO leveraged the SongPush platform to generate authentic & organic creator videos at scale. </p>
+                            <p class="case-study-desc" data-i18n="caseStudies.travelDesc">See how OMIO leveraged the SongPush platform to generate authentic & organic creator videos at scale. </p>
                             <div class="case-study-metrics">
                                 <div class="metric">
-                                    <span class="metric-label">Total Views</span>
+                                    <span class="metric-label" data-i18n="caseStudies.totalViews">Total Views</span>
                                     <span class="metric-value">~766,400</span>
                                 </div>
                                 <div class="metric">
-                                    <span class="metric-label">Creator Videos</span>
+                                    <span class="metric-label" data-i18n="caseStudies.creatorVideos">Creator Videos</span>
                                     <span class="metric-value">59</span>
                                 </div>
                                 <div class="metric">
-                                    <span class="metric-label">CPM</span>
+                                    <span class="metric-label" data-i18n="caseStudies.cpm">CPM</span>
                                     <span class="metric-value">~12.5€</span>
                                 </div>
                                 <div class="metric">
-                                    <span class="metric-label">First Video Live</span>
+                                    <span class="metric-label" data-i18n="caseStudies.firstVideoLive">First Video Live</span>
                                     <span class="metric-value">12 Hours</span>
                                 </div>
                             </div>
                             <a href="https://songpush.storydoc.com/c0kLj1" target="_blank" class="btn-primary btn-gradient">
-                                <span>Learn more</span>
+                                <span data-i18n="caseStudies.learnMore">Learn more</span>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M5 12h14M12 5l7 7-7 7"/>
                                 </svg>
@@ -1558,27 +1570,27 @@
                     <div class="case-study-card">
                         <div class="case-study-info">
                             <img src="../assets/images/brands/neotaste.png" alt="NeoTaste" class="case-study-logo" loading="lazy">
-                            <p class="case-study-desc">In just 10 minutes, NeoTaste launched a creator-powered push that turned food lovers into loyal app users—driving over 320,000 organic views and 23,000+ engagements</p>
+                            <p class="case-study-desc" data-i18n="caseStudies.foodDesc">In just 10 minutes, NeoTaste launched a creator-powered push that turned food lovers into loyal app users—driving over 320,000 organic views and 23,000+ engagements</p>
                             <div class="case-study-metrics">
                                 <div class="metric">
-                                    <span class="metric-label">Organic Views</span>
+                                    <span class="metric-label" data-i18n="caseStudies.organicViews">Organic Views</span>
                                     <span class="metric-value">300,000+</span>
                                 </div>
                                 <div class="metric">
-                                    <span class="metric-label">Total Engagements</span>
+                                    <span class="metric-label" data-i18n="caseStudies.totalEngagements">Total Engagements</span>
                                     <span class="metric-value">23,000+</span>
                                 </div>
                                 <div class="metric">
-                                    <span class="metric-label">From 0 to Campaign Go-Live</span>
+                                    <span class="metric-label" data-i18n="caseStudies.fromZeroToLive">From 0 to Campaign Go-Live</span>
                                     <span class="metric-value">10 mins</span>
                                 </div>
                                 <div class="metric">
-                                    <span class="metric-label">Duration</span>
+                                    <span class="metric-label" data-i18n="caseStudies.duration">Duration</span>
                                     <span class="metric-value">2 Weeks</span>
                                 </div>
                             </div>
                             <a href="https://songpush.storydoc.com/5rhj53" target="_blank" class="btn-primary btn-gradient">
-                                <span>Learn more</span>
+                                <span data-i18n="caseStudies.learnMore">Learn more</span>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M5 12h14M12 5l7 7-7 7"/>
                                 </svg>
@@ -1615,27 +1627,27 @@
                     <div class="case-study-card">
                         <div class="case-study-info">
                             <img src="../assets/images/brands/brand_logo_paramount.png" alt="Paramount Pictures" class="case-study-logo" loading="lazy" style="margin-left:-20px">
-                            <p class="case-study-desc">Paramount Pictures boosted awareness for "Gladiator II" with 220 creator videos, achieving nearly 600,000 organic TikTok views within 48 hours.</p>
+                            <p class="case-study-desc" data-i18n="caseStudies.moviesDesc">Paramount Pictures boosted awareness for "Gladiator II" with 220 creator videos, achieving nearly 600,000 organic TikTok views within 48 hours.</p>
                             <div class="case-study-metrics">
                                 <div class="metric">
-                                    <span class="metric-label">Organic Views</span>
+                                    <span class="metric-label" data-i18n="caseStudies.organicViews">Organic Views</span>
                                     <span class="metric-value">600,000+</span>
                                 </div>
                                 <div class="metric">
-                                    <span class="metric-label">Go-Live to 50+ Videos</span>
+                                    <span class="metric-label" data-i18n="caseStudies.goLiveTo50">Go-Live to 50+ Videos</span>
                                     <span class="metric-value">&lt; 48 hours</span>
                                 </div>
                                 <div class="metric">
-                                    <span class="metric-label">From 0 to Campaign Go-Live</span>
+                                    <span class="metric-label" data-i18n="caseStudies.fromZeroToLive">From 0 to Campaign Go-Live</span>
                                     <span class="metric-value">&lt; 10 min</span>
                                 </div>
                                 <div class="metric">
-                                    <span class="metric-label">Duration</span>
+                                    <span class="metric-label" data-i18n="caseStudies.duration">Duration</span>
                                     <span class="metric-value">2 Weeks</span>
                                 </div>
                             </div>
                             <a href="https://songpush.storydoc.com/1dvmeZ" target="_blank" class="btn-primary btn-gradient">
-                                <span>Learn more</span>
+                                <span data-i18n="caseStudies.learnMore">Learn more</span>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M5 12h14M12 5l7 7-7 7"/>
                                 </svg>
@@ -1672,27 +1684,27 @@
                     <div class="case-study-card">
                         <div class="case-study-info">
                             <img src="../assets/images/case-studies/justfood-logo.svg" alt="Just Food" class="case-study-logo" loading="lazy">
-                            <p class="case-study-desc">Learn how J*ST FOOD seamlessly activated authentic creator videos with SongPush to generate >1.4M organic TikTok views and drive meaningful consumer engagement.</p>
+                            <p class="case-study-desc" data-i18n="caseStudies.retailDesc">Learn how J*ST FOOD seamlessly activated authentic creator videos with SongPush to generate >1.4M organic TikTok views and drive meaningful consumer engagement.</p>
                             <div class="case-study-metrics">
                                 <div class="metric">
-                                    <span class="metric-label">Total Views</span>
+                                    <span class="metric-label" data-i18n="caseStudies.totalViews">Total Views</span>
                                     <span class="metric-value">~1.4M</span>
                                 </div>
                                 <div class="metric">
-                                    <span class="metric-label">Creator Videos</span>
+                                    <span class="metric-label" data-i18n="caseStudies.creatorVideos">Creator Videos</span>
                                     <span class="metric-value">237</span>
                                 </div>
                                 <div class="metric">
-                                    <span class="metric-label">CPM</span>
+                                    <span class="metric-label" data-i18n="caseStudies.cpm">CPM</span>
                                     <span class="metric-value">~21€</span>
                                 </div>
                                 <div class="metric">
-                                    <span class="metric-label">First Video Live</span>
+                                    <span class="metric-label" data-i18n="caseStudies.firstVideoLive">First Video Live</span>
                                     <span class="metric-value">24 Hours</span>
                                 </div>
                             </div>
                             <a href="https://songpush.storydoc.com/55QOtU" target="_blank" class="btn-primary btn-gradient">
-                                <span>Learn more</span>
+                                <span data-i18n="caseStudies.learnMore">Learn more</span>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M5 12h14M12 5l7 7-7 7"/>
                                 </svg>
@@ -1729,27 +1741,27 @@
                     <div class="case-study-card">
                         <div class="case-study-info">
                             <img src="../assets/images/brands/brand_logo_theorchard.png" alt="The Orchard" class="case-study-logo" loading="lazy">
-                            <p class="case-study-desc">Learn how The Orchard leveraged the SongPush platform to generate >400 authentic & high quality creator videos and ~7.2M views in Germany & GSA.</p>
+                            <p class="case-study-desc" data-i18n="caseStudies.musicDesc">Learn how The Orchard leveraged the SongPush platform to generate >400 authentic & high quality creator videos and ~7.2M views in Germany & GSA.</p>
                             <div class="case-study-metrics">
                                 <div class="metric">
-                                    <span class="metric-label">Total Views</span>
+                                    <span class="metric-label" data-i18n="caseStudies.totalViews">Total Views</span>
                                     <span class="metric-value">~7.2M</span>
                                 </div>
                                 <div class="metric">
-                                    <span class="metric-label">Creator Videos</span>
+                                    <span class="metric-label" data-i18n="caseStudies.creatorVideos">Creator Videos</span>
                                     <span class="metric-value">408</span>
                                 </div>
                                 <div class="metric">
-                                    <span class="metric-label">CPM</span>
+                                    <span class="metric-label" data-i18n="caseStudies.cpm">CPM</span>
                                     <span class="metric-value">~2€</span>
                                 </div>
                                 <div class="metric">
-                                    <span class="metric-label">First Video Live</span>
+                                    <span class="metric-label" data-i18n="caseStudies.firstVideoLive">First Video Live</span>
                                     <span class="metric-value">12 Hours</span>
                                 </div>
                             </div>
                             <a href="https://songpush.storydoc.com/VwWmaL" target="_blank" class="btn-primary btn-gradient">
-                                <span>Learn more</span>
+                                <span data-i18n="caseStudies.learnMore">Learn more</span>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M5 12h14M12 5l7 7-7 7"/>
                                 </svg>
@@ -1786,27 +1798,27 @@
                     <div class="case-study-card">
                         <div class="case-study-info">
                             <img src="../assets/images/case-studies/blindmate-logo.png" alt="Blindmate" class="case-study-logo" loading="lazy">
-                            <p class="case-study-desc">Reaching the top of the App Store Charts with a single WePush campaign.</p>
+                            <p class="case-study-desc" data-i18n="caseStudies.datingDesc">Reaching the top of the App Store Charts with a single WePush campaign.</p>
                             <div class="case-study-metrics">
                                 <div class="metric">
-                                    <span class="metric-label">App downloads</span>
+                                    <span class="metric-label" data-i18n="caseStudies.appDownloads">App downloads</span>
                                     <span class="metric-value">10,000+</span>
                                 </div>
                                 <div class="metric">
-                                    <span class="metric-label">Cost per result (download)</span>
+                                    <span class="metric-label" data-i18n="caseStudies.costPerResult">Cost per result (download)</span>
                                     <span class="metric-value">&lt; €0.20</span>
                                 </div>
                                 <div class="metric">
-                                    <span class="metric-label">Performance vs paid ads</span>
+                                    <span class="metric-label" data-i18n="caseStudies.performanceVsPaid">Performance vs paid ads</span>
                                     <span class="metric-value">10x</span>
                                 </div>
                                 <div class="metric">
-                                    <span class="metric-label">Duration</span>
+                                    <span class="metric-label" data-i18n="caseStudies.duration">Duration</span>
                                     <span class="metric-value">2 Weeks</span>
                                 </div>
                             </div>
                             <a href="https://songpush.storydoc.com/pDCHPS" target="_blank" class="btn-primary btn-gradient">
-                                <span>Learn more</span>
+                                <span data-i18n="caseStudies.learnMore">Learn more</span>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M5 12h14M12 5l7 7-7 7"/>
                                 </svg>
@@ -1843,27 +1855,27 @@
                     <div class="case-study-card">
                         <div class="case-study-info">
                             <img src="../assets/images/brands/brand_logo_enduco.png" alt="Enduco" class="case-study-logo" loading="lazy">
-                            <p class="case-study-desc">Discover how Enduco turned New Year's resolutions into results by using SongPush to launch a creator driven promo code campaign.</p>
+                            <p class="case-study-desc" data-i18n="caseStudies.fitnessDesc">Discover how Enduco turned New Year's resolutions into results by using SongPush to launch a creator driven promo code campaign.</p>
                             <div class="case-study-metrics">
                                 <div class="metric">
-                                    <span class="metric-label">Total Views</span>
+                                    <span class="metric-label" data-i18n="caseStudies.totalViews">Total Views</span>
                                     <span class="metric-value">~204,460</span>
                                 </div>
                                 <div class="metric">
-                                    <span class="metric-label">Creator Videos</span>
+                                    <span class="metric-label" data-i18n="caseStudies.creatorVideos">Creator Videos</span>
                                     <span class="metric-value">23</span>
                                 </div>
                                 <div class="metric">
-                                    <span class="metric-label">CPM</span>
+                                    <span class="metric-label" data-i18n="caseStudies.cpm">CPM</span>
                                     <span class="metric-value">~22.45€</span>
                                 </div>
                                 <div class="metric">
-                                    <span class="metric-label">First Video Live</span>
+                                    <span class="metric-label" data-i18n="caseStudies.firstVideoLive">First Video Live</span>
                                     <span class="metric-value">12 Hours</span>
                                 </div>
                             </div>
                             <a href="https://songpush.storydoc.com/pDmsoo" target="_blank" class="btn-primary btn-gradient">
-                                <span>Learn more</span>
+                                <span data-i18n="caseStudies.learnMore">Learn more</span>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M5 12h14M12 5l7 7-7 7"/>
                                 </svg>
@@ -1905,9 +1917,9 @@
         <div class="container">
             <div class="own-proof-layout">
                 <div class="own-proof-content">
-                    <span class="own-proof-badge">THE ULTIMATE PROOF</span>
-                    <h2 class="own-proof-headline">We Put Our Money<br>Where Our Mouth Is</h2>
-                    <p class="own-proof-subtext">We don't just build the platform—we use it to grow our own app. Every euro we invest in WePush is proof that we believe in what we've built.</p>
+                    <span class="own-proof-badge" data-i18n="ownProof.badge">THE ULTIMATE PROOF</span>
+                    <h2 class="own-proof-headline" data-i18n="ownProof.headline" data-i18n-html>We Put Our Money<br>Where Our Mouth Is</h2>
+                    <p class="own-proof-subtext" data-i18n="ownProof.subtext">We don't just build the platform—we use it to grow our own app. Every euro we invest in WePush is proof that we believe in what we've built.</p>
 
                     <div class="own-proof-card">
                         <div class="own-proof-card-header">
@@ -1915,26 +1927,26 @@
                                 <img src="../assets/images/case-studies/songpush-logo.png" alt="SongPush" class="own-proof-logo" loading="lazy">
                             </div>
                             <div class="own-proof-card-title">
-                                <span class="own-proof-card-name">SongPush App</span>
-                                <span class="own-proof-card-subtitle">Promoted with WePush</span>
+                                <span class="own-proof-card-name" data-i18n="ownProof.cardName">SongPush App</span>
+                                <span class="own-proof-card-subtitle" data-i18n="ownProof.cardSubtitle">Promoted with WePush</span>
                             </div>
                         </div>
                         <div class="own-proof-metrics">
                             <div class="own-proof-metric">
                                 <span class="own-proof-metric-value">9,000+</span>
-                                <span class="own-proof-metric-label">App Downloads</span>
+                                <span class="own-proof-metric-label" data-i18n="ownProof.appDownloads">App Downloads</span>
                             </div>
                             <div class="own-proof-metric">
                                 <span class="own-proof-metric-value">&lt; €0.30</span>
-                                <span class="own-proof-metric-label">Cost per Download</span>
+                                <span class="own-proof-metric-label" data-i18n="ownProof.costPerDownload">Cost per Download</span>
                             </div>
                             <div class="own-proof-metric">
                                 <span class="own-proof-metric-value">2 Weeks</span>
-                                <span class="own-proof-metric-label">Duration</span>
+                                <span class="own-proof-metric-label" data-i18n="ownProof.duration">Duration</span>
                             </div>
                             <div class="own-proof-metric own-proof-metric-highlight">
                                 <span class="own-proof-metric-value">10x</span>
-                                <span class="own-proof-metric-label">vs. Paid Ads</span>
+                                <span class="own-proof-metric-label" data-i18n="ownProof.vsPaidAds">vs. Paid Ads</span>
                             </div>
                         </div>
                     </div>
@@ -2258,8 +2270,8 @@
     <!-- Creativity Section -->
     <section class="creativity-section">
         <div class="container">
-            <h2 class="section-title-center">We reward <span class="text-accent">Creativity.</span><br>Not Followers.</h2>
-            <p class="section-subtitle-center">Supercharge your organic video output. Buyout the best-performing videos. Scale validated assets further with Paid Ads.</p>
+            <h2 class="section-title-center" data-i18n="creativity.title" data-i18n-html>We reward <span class="text-accent">Creativity.</span><br>Not Followers.</h2>
+            <p class="section-subtitle-center" data-i18n="creativity.subtitle">Supercharge your organic video output. Buyout the best-performing videos. Scale validated assets further with Paid Ads.</p>
         </div>
     </section>
 
@@ -2767,10 +2779,10 @@
                 <!-- First set of tiles -->
                 <div class="ac-tile ac-tile-white">
                     <div class="ac-header">
-                        <span class="ac-title">CPM</span>
+                        <span class="ac-title" data-i18n="analytics.cpm">CPM</span>
                         <div class="ac-icon-play"></div>
                     </div>
-                    <span class="ac-subtitle">last campaign</span>
+                    <span class="ac-subtitle" data-i18n="analytics.lastCampaign">last campaign</span>
                     <svg class="ac-chart-line" viewBox="0 0 200 60" preserveAspectRatio="none">
                         <path d="M0,50 Q25,45 50,35 T100,30 T150,20 T200,25" fill="none" stroke="#FF6B5B" stroke-width="2"/>
                         <path d="M0,55 Q30,50 60,45 T120,40 T180,35 T200,30" fill="none" stroke="#FF6B5B" stroke-width="1" opacity="0.5"/>
@@ -2782,7 +2794,7 @@
                 </div>
 
                 <div class="ac-tile ac-tile-coral">
-                    <span class="ac-label">Campaign budget left</span>
+                    <span class="ac-label" data-i18n="analytics.campaignBudgetLeft">Campaign budget left</span>
                     <span class="ac-value-medium">2.440/4.000€</span>
                     <div class="ac-percentage">↗ 61%</div>
                     <div class="ac-progress-bar">
@@ -2792,28 +2804,28 @@
 
                 <div class="ac-tile ac-tile-dark">
                     <div class="ac-header">
-                        <span class="ac-title">Analytics</span>
+                        <span class="ac-title" data-i18n="analytics.analytics">Analytics</span>
                         <div class="ac-badge-small ac-positive">↗ 0.6%</div>
                     </div>
-                    <span class="ac-label-small">Campaign performance</span>
+                    <span class="ac-label-small" data-i18n="analytics.campaignPerformance">Campaign performance</span>
                     <span class="ac-value-large">750.800</span>
-                    <span class="ac-label-small">Total views</span>
+                    <span class="ac-label-small" data-i18n="analytics.totalViews">Total views</span>
                     <div class="ac-mini-progress"></div>
                 </div>
 
                 <div class="ac-tile ac-tile-dark">
                     <div class="ac-header">
-                        <span class="ac-title">Analytics</span>
+                        <span class="ac-title" data-i18n="analytics.analytics">Analytics</span>
                         <div class="ac-badge-small ac-accent">↗ 9,5%</div>
                     </div>
-                    <span class="ac-label-small">Your performance</span>
+                    <span class="ac-label-small" data-i18n="analytics.yourPerformance">Your performance</span>
                     <span class="ac-value-large">12.240</span>
-                    <span class="ac-label-small">Total views</span>
+                    <span class="ac-label-small" data-i18n="analytics.totalViews">Total views</span>
                     <div class="ac-mini-progress ac-accent"></div>
                 </div>
 
                 <div class="ac-tile ac-tile-white">
-                    <span class="ac-label">Cooperation overview:</span>
+                    <span class="ac-label" data-i18n="analytics.cooperationOverview">Cooperation overview:</span>
                     <div class="ac-bars">
                         <div class="ac-bar" style="height: 40%;"></div>
                         <div class="ac-bar" style="height: 55%;"></div>
@@ -2831,13 +2843,13 @@
 
                 <div class="ac-tile ac-tile-coral">
                     <span class="ac-value-hero">1300</span>
-                    <span class="ac-description">new creations in the last 7 days</span>
+                    <span class="ac-description" data-i18n="analytics.newCreations">new creations in the last 7 days</span>
                     <div class="ac-badge-accent">+1.7%</div>
                 </div>
 
                 <div class="ac-tile ac-tile-coral">
                     <div class="ac-header">
-                        <span class="ac-title">Performance</span>
+                        <span class="ac-title" data-i18n="analytics.performance">Performance</span>
                         <div class="ac-icon-arrow">↗</div>
                     </div>
                     <div class="ac-perf-bars">
@@ -2860,10 +2872,10 @@
                 <!-- Duplicate set for seamless loop -->
                 <div class="ac-tile ac-tile-white">
                     <div class="ac-header">
-                        <span class="ac-title">CPM</span>
+                        <span class="ac-title" data-i18n="analytics.cpm">CPM</span>
                         <div class="ac-icon-play"></div>
                     </div>
-                    <span class="ac-subtitle">last campaign</span>
+                    <span class="ac-subtitle" data-i18n="analytics.lastCampaign">last campaign</span>
                     <svg class="ac-chart-line" viewBox="0 0 200 60" preserveAspectRatio="none">
                         <path d="M0,50 Q25,45 50,35 T100,30 T150,20 T200,25" fill="none" stroke="#FF6B5B" stroke-width="2"/>
                         <path d="M0,55 Q30,50 60,45 T120,40 T180,35 T200,30" fill="none" stroke="#FF6B5B" stroke-width="1" opacity="0.5"/>
@@ -2875,7 +2887,7 @@
                 </div>
 
                 <div class="ac-tile ac-tile-coral">
-                    <span class="ac-label">Campaign budget left</span>
+                    <span class="ac-label" data-i18n="analytics.campaignBudgetLeft">Campaign budget left</span>
                     <span class="ac-value-medium">2.440/4.000€</span>
                     <div class="ac-percentage">↗ 61%</div>
                     <div class="ac-progress-bar">
@@ -2885,28 +2897,28 @@
 
                 <div class="ac-tile ac-tile-dark">
                     <div class="ac-header">
-                        <span class="ac-title">Analytics</span>
+                        <span class="ac-title" data-i18n="analytics.analytics">Analytics</span>
                         <div class="ac-badge-small ac-positive">↗ 0.6%</div>
                     </div>
-                    <span class="ac-label-small">Campaign performance</span>
+                    <span class="ac-label-small" data-i18n="analytics.campaignPerformance">Campaign performance</span>
                     <span class="ac-value-large">750.800</span>
-                    <span class="ac-label-small">Total views</span>
+                    <span class="ac-label-small" data-i18n="analytics.totalViews">Total views</span>
                     <div class="ac-mini-progress"></div>
                 </div>
 
                 <div class="ac-tile ac-tile-dark">
                     <div class="ac-header">
-                        <span class="ac-title">Analytics</span>
+                        <span class="ac-title" data-i18n="analytics.analytics">Analytics</span>
                         <div class="ac-badge-small ac-accent">↗ 9,5%</div>
                     </div>
-                    <span class="ac-label-small">Your performance</span>
+                    <span class="ac-label-small" data-i18n="analytics.yourPerformance">Your performance</span>
                     <span class="ac-value-large">12.240</span>
-                    <span class="ac-label-small">Total views</span>
+                    <span class="ac-label-small" data-i18n="analytics.totalViews">Total views</span>
                     <div class="ac-mini-progress ac-accent"></div>
                 </div>
 
                 <div class="ac-tile ac-tile-white">
-                    <span class="ac-label">Cooperation overview:</span>
+                    <span class="ac-label" data-i18n="analytics.cooperationOverview">Cooperation overview:</span>
                     <div class="ac-bars">
                         <div class="ac-bar" style="height: 40%;"></div>
                         <div class="ac-bar" style="height: 55%;"></div>
@@ -2924,13 +2936,13 @@
 
                 <div class="ac-tile ac-tile-coral">
                     <span class="ac-value-hero">1300</span>
-                    <span class="ac-description">new creations in the last 7 days</span>
+                    <span class="ac-description" data-i18n="analytics.newCreations">new creations in the last 7 days</span>
                     <div class="ac-badge-accent">+1.7%</div>
                 </div>
 
                 <div class="ac-tile ac-tile-coral">
                     <div class="ac-header">
-                        <span class="ac-title">Performance</span>
+                        <span class="ac-title" data-i18n="analytics.performance">Performance</span>
                         <div class="ac-icon-arrow">↗</div>
                     </div>
                     <div class="ac-perf-bars">
@@ -2955,15 +2967,15 @@
         <div class="stats-grid" style="padding: 40px 20px 60px;">
             <div class="stat-item">
                 <span class="stat-value">100k+</span>
-                <span class="stat-label">Active Creators across all regions</span>
+                <span class="stat-label" data-i18n="stats.activeCreators">Active Creators across all regions</span>
             </div>
             <div class="stat-item">
                 <span class="stat-value">2000+</span>
-                <span class="stat-label">Campaigns Launched</span>
+                <span class="stat-label" data-i18n="stats.campaignsLaunched">Campaigns Launched</span>
             </div>
             <div class="stat-item">
                 <span class="stat-value">> 1.000</span>
-                <span class="stat-label">happy customers</span>
+                <span class="stat-label" data-i18n="stats.happyCustomers">happy customers</span>
             </div>
         </div>
 
@@ -3525,17 +3537,17 @@
     <section class="bento-features-section" id="how-it-works">
         <div class="container-wide">
             <div class="bento-header">
-                <h2 class="bento-title"><span class="text-primary">Creator Marketing</span> as it should be.</h2>
-                <p class="bento-subtitle">Finally run scalable creator campaigns at scale with the most advanced creator tech in the game.</p>
+                <h2 class="bento-title" data-i18n="bento.title" data-i18n-html><span class="text-primary">Creator Marketing</span> as it should be.</h2>
+                <p class="bento-subtitle" data-i18n="bento.subtitle">Finally run scalable creator campaigns at scale with the most advanced creator tech in the game.</p>
             </div>
 
             <div class="bento-grid">
                 <!-- Large Feature: Quick Launch -->
                 <div class="bento-card bento-large" data-scroll>
                     <div class="bento-card-content">
-                        <div class="bento-tag">AI-Powered Matching</div>
-                        <h3 class="bento-card-title">The Perfect Match</h3>
-                        <p class="bento-card-text">Define your campaign criteria and let our AI find the perfect creators automatically.</p>
+                        <div class="bento-tag" data-i18n="bento.aiMatchingTag">AI-Powered Matching</div>
+                        <h3 class="bento-card-title" data-i18n="bento.aiMatchingTitle">The Perfect Match</h3>
+                        <p class="bento-card-text" data-i18n="bento.aiMatchingDesc">Define your campaign criteria and let our AI find the perfect creators automatically.</p>
                     </div>
                     <div class="bento-visual-launch">
                         <div class="ai-matching-visual">
@@ -3638,9 +3650,9 @@
 
                 <!-- Tall Feature: Creator Sourcing -->
                 <div class="bento-card bento-tall" data-scroll>
-                    <div class="bento-tag">Creator Sourcing</div>
-                    <h3 class="bento-card-title">100K+<br>Creators</h3>
-                    <p class="bento-card-text">Once your campaign is live, >100k creators can join and submit their content. No outreach. No negotiations. Fastest Content Delivery on the market.</p>
+                    <div class="bento-tag" data-i18n="bento.creatorSourcingTag">Creator Sourcing</div>
+                    <h3 class="bento-card-title" data-i18n="bento.creatorSourcingTitle" data-i18n-html>100K+<br>Creators</h3>
+                    <p class="bento-card-text" data-i18n="bento.creatorSourcingDesc">Once your campaign is live, >100k creators can join and submit their content. No outreach. No negotiations. Fastest Content Delivery on the market.</p>
                     <div class="creator-avatars-stack">
                         <div class="avatar-row">
                             <div class="avatar-track">
@@ -3686,8 +3698,8 @@
                             <path d="M12 2L9.5 9.5 2 12l7.5 2.5L12 22l2.5-7.5L22 12l-7.5-2.5L12 2z" fill="var(--primary)"/>
                         </svg>
                     </div>
-                    <h4 class="bento-small-title">AI-Optimized</h4>
-                    <p class="bento-small-text">Our AI analyzes millions of data points to maximize your viral potential.</p>
+                    <h4 class="bento-small-title" data-i18n="bento.aiOptimizedTitle">AI-Optimized</h4>
+                    <p class="bento-small-text" data-i18n="bento.aiOptimizedDesc">Our AI analyzes millions of data points to maximize your viral potential.</p>
                 </div>
 
                 <!-- Small Feature: Brand Safety -->
@@ -3698,16 +3710,16 @@
                             <path d="M9 12l2 2 4-4" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"/>
                         </svg>
                     </div>
-                    <h4 class="bento-small-title">Brand Safety & Quality Review</h4>
-                    <p class="bento-small-text">Your only To-Do? Watch incoming creations and decline free of charge, if content is not to your liking. Budget flows back to campaign pool for other creators.</p>
+                    <h4 class="bento-small-title" data-i18n="bento.brandSafetyTitle">Brand Safety & Quality Review</h4>
+                    <p class="bento-small-text" data-i18n="bento.brandSafetyDesc">Your only To-Do? Watch incoming creations and decline free of charge, if content is not to your liking. Budget flows back to campaign pool for other creators.</p>
                 </div>
 
                 <!-- Wide Feature: Analytics Dashboard -->
                 <div class="bento-card bento-wide bento-2row" data-scroll>
                     <div class="bento-card-content">
-                        <div class="bento-tag">Real-Time Insights</div>
-                        <h3 class="bento-card-title">Analytics & Reporting</h3>
-                        <p class="bento-card-text">Monitor all relevant stats in your account in real-time. Download all performance metrics as .csv & xlsx.</p>
+                        <div class="bento-tag" data-i18n="bento.analyticsTag">Real-Time Insights</div>
+                        <h3 class="bento-card-title" data-i18n="bento.analyticsTitle">Analytics & Reporting</h3>
+                        <p class="bento-card-text" data-i18n="bento.analyticsDesc">Monitor all relevant stats in your account in real-time. Download all performance metrics as .csv & xlsx.</p>
                     </div>
                     <div class="bento-visual-analytics">
                         <!-- Top Metrics Row -->
@@ -3818,8 +3830,8 @@
                             <path d="M12 6v12M8 10h8M8 14h8" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"/>
                         </svg>
                     </div>
-                    <h4 class="bento-small-title">Pay Per Result</h4>
-                    <p class="bento-small-text">Only pay when content reaches target views.</p>
+                    <h4 class="bento-small-title" data-i18n="bento.payPerResultTitle">Pay Per Result</h4>
+                    <p class="bento-small-text" data-i18n="bento.payPerResultDesc">Only pay when content reaches target views.</p>
                     <div class="video-carousel">
                         <div class="carousel-track">
                             <div class="video-item">
@@ -3867,8 +3879,8 @@
                             <path d="M2 12h20" stroke="var(--primary)" stroke-width="2"/>
                         </svg>
                     </div>
-                    <h4 class="bento-small-title">Global Reach</h4>
-                    <p class="bento-small-text">Target creators by region, language, and demographics.</p>
+                    <h4 class="bento-small-title" data-i18n="bento.globalReachTitle">Global Reach</h4>
+                    <p class="bento-small-text" data-i18n="bento.globalReachDesc">Target creators by region, language, and demographics.</p>
                     <div class="mini-map">
                         <img src="../assets/images/world.svg" alt="World Map" class="mini-map-img" loading="lazy">
                         <div class="mini-pin" style="top: 30%; left: 20%; --delay: 0s"></div>
@@ -3882,9 +3894,9 @@
                 <!-- Wide Feature: Buyout -->
                 <div class="bento-card bento-wide bento-buyout" data-scroll>
                     <div class="bento-card-content">
-                        <div class="bento-tag">Content Licensing</div>
-                        <h3 class="bento-card-title">Buyouts</h3>
-                        <p class="bento-card-text">Instant buyouts of top-performing campaign videos. Identify the best organic assets and scale them instantly on your desired Paid Ads channels.</p>
+                        <div class="bento-tag" data-i18n="bento.buyoutTag">Content Licensing</div>
+                        <h3 class="bento-card-title" data-i18n="bento.buyoutTitle">Buyouts</h3>
+                        <p class="bento-card-text" data-i18n="bento.buyoutDesc">Instant buyouts of top-performing campaign videos. Identify the best organic assets and scale them instantly on your desired Paid Ads channels.</p>
                     </div>
                     <div class="bento-visual-buyout">
                         <div class="buyout-flow">
@@ -3926,8 +3938,8 @@
 
                 <!-- Small Feature: Content Types -->
                 <div class="bento-card bento-small" data-scroll>
-                    <div class="bento-tag">Multi-Platform</div>
-                    <h3 class="bento-card-title">All Content Types</h3>
+                    <div class="bento-tag" data-i18n="bento.contentTypesTag">Multi-Platform</div>
+                    <h3 class="bento-card-title" data-i18n="bento.contentTypesTitle">All Content Types</h3>
                     <div class="content-types-grid" style="grid-template-columns: 1fr 1fr;">
                         <div class="content-type">
                             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -3942,15 +3954,15 @@
                             <span>Instagram</span>
                         </div>
                     </div>
-                    <p class="bento-card-text">Reach audiences on TikTok and Instagram with short-form videos, reels, and stories.</p>
+                    <p class="bento-card-text" data-i18n="bento.contentTypesDesc">Reach audiences on TikTok and Instagram with short-form videos, reels, and stories.</p>
                 </div>
 
                 <!-- Wide Feature: AI Briefing Generator -->
                 <div class="bento-card bento-wide bento-briefing" style="grid-column: span 3;" data-scroll>
                     <div class="bento-card-content">
-                        <div class="bento-tag">AI-Powered</div>
-                        <h3 class="bento-card-title">AI Briefing Generator</h3>
-                        <p class="bento-card-text">Trained on the best-performing briefings on each industry vertical. >95% of created briefs are used in actual campaigns.</p>
+                        <div class="bento-tag" data-i18n="bento.aiBriefingTag">AI-Powered</div>
+                        <h3 class="bento-card-title" data-i18n="bento.aiBriefingTitle">AI Briefing Generator</h3>
+                        <p class="bento-card-text" data-i18n="bento.aiBriefingDesc">Trained on the best-performing briefings on each industry vertical. >95% of created briefs are used in actual campaigns.</p>
                     </div>
                     <div class="bento-visual-briefing">
                         <div class="briefing-generator">
@@ -4265,15 +4277,15 @@
                             <path d="M7 18h2" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"/>
                         </svg>
                     </div>
-                    <h4 class="bento-small-title">Billing & Invoicing</h4>
-                    <p class="bento-small-text">Fully automated billing & invoice creation for advertisers & creators. "Pay via Invoice" available!</p>
+                    <h4 class="bento-small-title" data-i18n="bento.billingTitle">Billing & Invoicing</h4>
+                    <p class="bento-small-text" data-i18n="bento.billingDesc">Fully automated billing & invoice creation for advertisers & creators. "Pay via Invoice" available!</p>
                 </div>
 
                 <!-- Wide Feature: Automated Workflow - Autopilot Visualization -->
                 <div class="bento-card bento-autopilot" style="grid-column: span 3;" data-scroll>
-                    <div class="bento-tag">Automation</div>
-                    <h3 class="bento-card-title">Hands-Off Workflow</h3>
-                    <p class="bento-card-text" style="margin-bottom: 24px;">Set your campaign live and watch the magic unfold. Our AI handles everything automatically.</p>
+                    <div class="bento-tag" data-i18n="bento.autopilotTag">Automation</div>
+                    <h3 class="bento-card-title" data-i18n="bento.autopilotTitle">Hands-Off Workflow</h3>
+                    <p class="bento-card-text" style="margin-bottom: 24px;" data-i18n="bento.autopilotDesc">Set your campaign live and watch the magic unfold. Our AI handles everything automatically.</p>
 
                     <div class="autopilot-container">
                         <!-- Left: The Launch Control -->
@@ -4881,7 +4893,7 @@
 
             <!-- And Many More -->
             <div class="bento-more">
-                <span>and many more...</span>
+                <span data-i18n="bento.andMore">and many more...</span>
             </div>
         </div>
     </section>
@@ -4931,17 +4943,17 @@
     <!-- Testimonials Section -->
     <section class="testimonials-section">
         <div class="container">
-            <h3 class="testimonials-heading">First impact?<br>In less than 10 minutes.</h3>
-            <p class="testimonials-subheading">Cumbersome overhead when planning releases with creators is now a thing of the past.</p>
+            <h3 class="testimonials-heading" data-i18n="testimonials.heading" data-i18n-html>First impact?<br>In less than 10 minutes.</h3>
+            <p class="testimonials-subheading" data-i18n="testimonials.subheading">Cumbersome overhead when planning releases with creators is now a thing of the past.</p>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-image-wrapper">
                         <img loading="lazy" src="../assets/images/testimonials/laurenz-reichl.png" alt="Laurenz Reichl" class="testimonial-image">
                     </div>
                     <div class="testimonial-name"><strong>Laurenz Reichl</strong></div>
-                    <div class="testimonial-role">CEO & Founder @Blindmate</div>
+                    <div class="testimonial-role" data-i18n="testimonials.role1">CEO & Founder @Blindmate</div>
                     <img src="../assets/images/brands/brand_logo_blindmate.png" alt="Blindmate" class="testimonial-logo" loading="lazy">
-                    <div class="testimonial-text">"Since we launched our first campaign a year ago, SongPush has been the fuel for our growth — it catapulted us into the app store charts several times and generated tens of thousands of app downloads."</div>
+                    <div class="testimonial-text" data-i18n="testimonials.quote1">"Since we launched our first campaign a year ago, SongPush has been the fuel for our growth — it catapulted us into the app store charts several times and generated tens of thousands of app downloads."</div>
                     <div class="testimonial-socials">
                         <a href="https://www.linkedin.com/in/laurenz-reichl-376892154/" target="_blank" class="social-button">
                             <img src="../assets/images/testimonials/linkedin-logo.webp" alt="LinkedIn" class="social-icon" loading="lazy">
@@ -4953,11 +4965,11 @@
                         <img loading="lazy" src="../assets/images/testimonials/sebastian-gaertner.png" alt="Sebastian Gärtner" class="testimonial-image">
                     </div>
                     <div class="testimonial-name"><strong>Sebastian Gärtner</strong></div>
-                    <div class="testimonial-role">CEO & Co-Founder laria<br>Ex-Managing Director DEPARTD</div>
+                    <div class="testimonial-role" data-i18n="testimonials.role2" data-i18n-html>CEO & Co-Founder laria<br>Ex-Managing Director DEPARTD</div>
                     <div class="testimonial-logo-box">
                         <img src="../assets/images/brands/brand_logo_laria.svg" alt="laria" class="testimonial-logo testimonial-logo-dark" loading="lazy">
                     </div>
-                    <div class="testimonial-text">"The combination of platform power with tens of thousands of creators on SongPush and branded effects like TikTok filters is simply amazing."</div>
+                    <div class="testimonial-text" data-i18n="testimonials.quote2">"The combination of platform power with tens of thousands of creators on SongPush and branded effects like TikTok filters is simply amazing."</div>
                     <div class="testimonial-socials">
                         <a href="https://www.linkedin.com/in/sebastian-gärtner-520b90151/" target="_blank" class="social-button">
                             <img src="../assets/images/testimonials/linkedin-logo.webp" alt="LinkedIn" class="social-icon" loading="lazy">
@@ -4969,9 +4981,9 @@
                         <img loading="lazy" src="../assets/images/testimonials/nico-santos.jpeg" alt="Nico Santos" class="testimonial-image">
                     </div>
                     <div class="testimonial-name"><strong>Nico Santos</strong></div>
-                    <div class="testimonial-role">Multi Platin- & Gold Sänger & Songwriter</div>
+                    <div class="testimonial-role" data-i18n="testimonials.role3">Multi Platin- & Gold Sänger & Songwriter</div>
                     <img src="../assets/images/brands/brand_logo_universal.png" alt="Universal Music" class="testimonial-logo" loading="lazy">
-                    <div class="testimonial-text">"An incredible tool for any advertiser. Hundreds of creations at the push of a button without headaches are a game changer."</div>
+                    <div class="testimonial-text" data-i18n="testimonials.quote3">"An incredible tool for any advertiser. Hundreds of creations at the push of a button without headaches are a game changer."</div>
                     <div class="testimonial-socials">
                         <a href="https://www.instagram.com/nicosantosofficial" target="_blank" class="social-button">
                             <img src="../assets/images/testimonials/instagram-logo.webp" alt="Instagram" class="social-icon" loading="lazy">
@@ -4986,9 +4998,9 @@
                         <img loading="lazy" src="../assets/images/testimonials/diana-bockius.webp" alt="Diana Bockius" class="testimonial-image">
                     </div>
                     <div class="testimonial-name"><strong>Diana Bockius</strong></div>
-                    <div class="testimonial-role">Cosnova</div>
+                    <div class="testimonial-role" data-i18n="testimonials.role4">Cosnova</div>
                     <img src="../assets/images/brands/brand_logo_cosnova.png" alt="Cosnova" class="testimonial-logo" loading="lazy">
-                    <div class="testimonial-text">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</div>
+                    <div class="testimonial-text" data-i18n="testimonials.quote4">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</div>
                     <div class="testimonial-socials">
                         <a href="#" target="_blank" class="social-button">
                             <img src="../assets/images/testimonials/linkedin-logo.webp" alt="LinkedIn" class="social-icon" loading="lazy">
@@ -5019,8 +5031,8 @@
     <section class="guideflow-section" style="position: relative; overflow: hidden;">
         <img src="../assets/images/lines.webp" alt="" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; pointer-events: none; z-index: 0;" />
         <div class="container" style="position: relative; z-index: 1;">
-            <h3 class="testimonials-heading">See how it works</h3>
-            <p class="testimonials-subheading">Launch your first campaign in minutes with our intuitive platform.</p>
+            <h3 class="testimonials-heading" data-i18n="guideflow.title">See how it works</h3>
+            <p class="testimonials-subheading" data-i18n="guideflow.subtitle">Launch your first campaign in minutes with our intuitive platform.</p>
             <div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 65%; padding-top: 50px; border-radius: 16px; overflow: hidden;">
                 <iframe src="https://app.guideflow.com/embed/qkq3y97h1r" style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0; border-radius: 16px;" allowfullscreen></iframe>
             </div>
@@ -5031,8 +5043,8 @@
     <section class="pricing-section" id="pricing">
         <div class="container">
             <div class="pricing-header">
-                <span class="pricing-badge">Pricing</span>
-                <h2 class="pricing-title">Forget monthly fees.</h2>
+                <span class="pricing-badge" data-i18n="pricing.badge">Pricing</span>
+                <h2 class="pricing-title" data-i18n="pricing.title">Forget monthly fees.</h2>
                 <div class="pricing-killed">
                     <div class="pricing-killed-item">
                         <span>$99/mo</span>
@@ -5051,26 +5063,26 @@
                         <div class="killed-line"></div>
                     </div>
                 </div>
-                <p class="pricing-subtitle">Create your free account. Set your own budget. Launch when you're ready.</p>
+                <p class="pricing-subtitle" data-i18n="pricing.subtitle">Create your free account. Set your own budget. Launch when you're ready.</p>
             </div>
 
             <div class="pricing-grid">
                 <!-- Card 1: Free Account -->
                 <div class="pricing-perk-card">
-                    <div class="pricing-perk-highlight">$0/mo — always</div>
+                    <div class="pricing-perk-highlight" data-i18n="pricing.card1Highlight">$0/mo — always</div>
                     <div class="pricing-perk-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
                             <path d="M9 12l2 2 4-4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <h3 class="pricing-perk-title">Free Forever</h3>
-                    <p class="pricing-perk-desc">No subscriptions, no monthly fees, no annual contracts. Just create your account and start launching campaigns.</p>
+                    <h3 class="pricing-perk-title" data-i18n="pricing.card1Title">Free Forever</h3>
+                    <p class="pricing-perk-desc" data-i18n="pricing.card1Desc">No subscriptions, no monthly fees, no annual contracts. Just create your account and start launching campaigns.</p>
                 </div>
 
                 <!-- Card 2: Unlimited Team -->
                 <div class="pricing-perk-card">
-                    <div class="pricing-perk-highlight">∞ members — $0 extra</div>
+                    <div class="pricing-perk-highlight" data-i18n="pricing.card2Highlight">∞ members — $0 extra</div>
                     <div class="pricing-perk-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
@@ -5079,43 +5091,43 @@
                             <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
                         </svg>
                     </div>
-                    <h3 class="pricing-perk-title">Unlimited Team</h3>
-                    <p class="pricing-perk-desc">Invite your entire team — marketers, managers, interns, everyone. No per-seat pricing. Full access for all.</p>
+                    <h3 class="pricing-perk-title" data-i18n="pricing.card2Title">Unlimited Team</h3>
+                    <p class="pricing-perk-desc" data-i18n="pricing.card2Desc">Invite your entire team — marketers, managers, interns, everyone. No per-seat pricing. Full access for all.</p>
                 </div>
 
                 <!-- Card 3: Your Budget -->
                 <div class="pricing-perk-card">
-                    <div class="pricing-perk-highlight">Your rules — your budget</div>
+                    <div class="pricing-perk-highlight" data-i18n="pricing.card3Highlight">Your rules — your budget</div>
                     <div class="pricing-perk-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
                         </svg>
                     </div>
-                    <h3 class="pricing-perk-title">You Set the Budget</h3>
-                    <p class="pricing-perk-desc">You decide how much to spend and when your campaign goes live. Full control, full transparency. Pay only for results.</p>
+                    <h3 class="pricing-perk-title" data-i18n="pricing.card3Title">You Set the Budget</h3>
+                    <p class="pricing-perk-desc" data-i18n="pricing.card3Desc">You decide how much to spend and when your campaign goes live. Full control, full transparency. Pay only for results.</p>
                 </div>
 
                 <!-- Card 4: Free Tools -->
                 <div class="pricing-perk-card pricing-perk-featured">
-                    <div class="pricing-perk-featured-badge">Bonus</div>
+                    <div class="pricing-perk-featured-badge" data-i18n="pricing.card4Badge">Bonus</div>
                     <div class="pricing-perk-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z" stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <h3 class="pricing-perk-title">Free Tools Included</h3>
-                    <p class="pricing-perk-desc">Get access to powerful tools at no extra cost — like our AI-powered Briefing Generator for professional campaign briefs.</p>
+                    <h3 class="pricing-perk-title" data-i18n="pricing.card4Title">Free Tools Included</h3>
+                    <p class="pricing-perk-desc" data-i18n="pricing.card4Desc">Get access to powerful tools at no extra cost — like our AI-powered Briefing Generator for professional campaign briefs.</p>
                 </div>
             </div>
 
             <div class="pricing-cta">
                 <a href="https://app.songpush.com" class="btn-primary btn-large btn-gradient">
-                    <span>Create Your Free Account</span>
+                    <span data-i18n="pricing.cta">Create Your Free Account</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>
                 </a>
-                <p class="pricing-cta-note">No credit card required</p>
+                <p class="pricing-cta-note" data-i18n="pricing.ctaNote">No credit card required</p>
             </div>
         </div>
     </section>
@@ -5124,15 +5136,15 @@
     <section class="faq-section">
         <div class="container">
             <div class="faq-header-centered">
-                <span class="faq-badge">FAQ</span>
-                <h2 class="faq-title">Do you have a question?</h2>
-                <p class="faq-subtitle">Everything you need to know about running campaigns on WePush.</p>
+                <span class="faq-badge" data-i18n="faq.badge">FAQ</span>
+                <h2 class="faq-title" data-i18n="faq.title">Do you have a question?</h2>
+                <p class="faq-subtitle" data-i18n="faq.subtitle">Everything you need to know about running campaigns on WePush.</p>
             </div>
             <div class="faq-wrap_new">
                 <div class="accordion_new">
                     <div class="accordion-trigger">
                         <div class="title-accordion-wrap">
-                            <div class="accordion-title_new">How are WePush and SongPush related?</div>
+                            <div class="accordion-title_new" data-i18n="faq.q1">How are WePush and SongPush related?</div>
                         </div>
                         <div class="arrow-accordion">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="arrow-svg">
@@ -5141,13 +5153,13 @@
                         </div>
                     </div>
                     <div class="accordion-content">
-                        <p class="accordion-text_new">While SongPush promotes songs from artists and music labels through audio content, we support brands with WePush in marketing their products.</p>
+                        <p class="accordion-text_new" data-i18n="faq.a1">While SongPush promotes songs from artists and music labels through audio content, we support brands with WePush in marketing their products.</p>
                     </div>
                 </div>
                 <div class="accordion_new">
                     <div class="accordion-trigger">
                         <div class="title-accordion-wrap">
-                            <div class="accordion-title_new">What is WePush and how does it work?</div>
+                            <div class="accordion-title_new" data-i18n="faq.q2">What is WePush and how does it work?</div>
                         </div>
                         <div class="arrow-accordion">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="arrow-svg">
@@ -5156,13 +5168,13 @@
                         </div>
                     </div>
                     <div class="accordion-content">
-                        <p class="accordion-text_new">WePush is a platform that connects brands and music creators with TikTok creators. It enables you to launch a campaign where selected TikTok creators produce short videos featuring your song or product. The WePush platform automatically handles the selection of suitable creators and the briefing, making creator marketing very easy for brands. In practice, this means: You upload information about the product (or sound), define goals and budget, and WePush organizes hundreds of TikTok videos through appropriate creators. Through constant quality improvements (e.g., removing low-impact creators and adding thousands of top creators), WePush campaigns achieve great reach and impact on TikTok.</p>
+                        <p class="accordion-text_new" data-i18n="faq.a2">WePush is a platform that connects brands and music creators with TikTok creators. It enables you to launch a campaign where selected TikTok creators produce short videos featuring your song or product. The WePush platform automatically handles the selection of suitable creators and the briefing, making creator marketing very easy for brands. In practice, this means: You upload information about the product (or sound), define goals and budget, and WePush organizes hundreds of TikTok videos through appropriate creators. Through constant quality improvements (e.g., removing low-impact creators and adding thousands of top creators), WePush campaigns achieve great reach and impact on TikTok.</p>
                     </div>
                 </div>
                 <div class="accordion_new">
                     <div class="accordion-trigger">
                         <div class="title-accordion-wrap">
-                            <div class="accordion-title_new">How do I start a campaign with WePush?</div>
+                            <div class="accordion-title_new" data-i18n="faq.q3">How do I start a campaign with WePush?</div>
                         </div>
                         <div class="arrow-accordion">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="arrow-svg">
@@ -5171,13 +5183,13 @@
                         </div>
                     </div>
                     <div class="accordion-content">
-                        <p class="accordion-text_new">To start a campaign, you first need to create a manager account at WePush (e.g., as a label or brand). Go to the WePush website and register as an advertiser/manager. After confirming your email, your account will be reviewed and activated by the WePush team (this usually takes no more than one to two business days). Once your account is activated, you can add products (or songs), invite team members, and create your first campaigns. Campaign creation is done through a dashboard or the app by entering all important data (product, song/TikTok link, campaign goal, desired start date, budget, etc.). After submitting the campaign request, the WePush team will contact you as soon as possible to support the campaign launch. In many cases, campaigns can go live within a few days, especially if all information is provided and payment has been made. You can also specify a desired go-live date for when the campaign should start.</p>
+                        <p class="accordion-text_new" data-i18n="faq.a3">To start a campaign, you first need to create a manager account at WePush (e.g., as a label or brand). Go to the WePush website and register as an advertiser/manager. After confirming your email, your account will be reviewed and activated by the WePush team (this usually takes no more than one to two business days). Once your account is activated, you can add products (or songs), invite team members, and create your first campaigns. Campaign creation is done through a dashboard or the app by entering all important data (product, song/TikTok link, campaign goal, desired start date, budget, etc.). After submitting the campaign request, the WePush team will contact you as soon as possible to support the campaign launch. In many cases, campaigns can go live within a few days, especially if all information is provided and payment has been made. You can also specify a desired go-live date for when the campaign should start.</p>
                     </div>
                 </div>
                 <div class="accordion_new">
                     <div class="accordion-trigger">
                         <div class="title-accordion-wrap">
-                            <div class="accordion-title_new">How long does it take for my campaign to go live?</div>
+                            <div class="accordion-title_new" data-i18n="faq.q4">How long does it take for my campaign to go live?</div>
                         </div>
                         <div class="arrow-accordion">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="arrow-svg">
@@ -5186,13 +5198,13 @@
                         </div>
                     </div>
                     <div class="accordion-content">
-                        <p class="accordion-text_new">Typically, a campaign can be started very quickly once your account is activated and the campaign details are finalized. Account verification usually takes up to 2 business days. After that, the timeline depends on you: You set a start date or coordinate it with us. Many campaigns can go live within a few days of booking, especially if the budget is paid and the briefing is clear. WePush even asks for your ideal go-live date to align with it. If there are delays during review or preparation, the WePush team is ready to help - for example, if activation takes longer than expected. Overall, you can expect your campaign to go live within 2-5 business days under normal circumstances, provided all requirements are met.</p>
+                        <p class="accordion-text_new" data-i18n="faq.a4">Typically, a campaign can be started very quickly once your account is activated and the campaign details are finalized. Account verification usually takes up to 2 business days. After that, the timeline depends on you: You set a start date or coordinate it with us. Many campaigns can go live within a few days of booking, especially if the budget is paid and the briefing is clear. WePush even asks for your ideal go-live date to align with it. If there are delays during review or preparation, the WePush team is ready to help - for example, if activation takes longer than expected. Overall, you can expect your campaign to go live within 2-5 business days under normal circumstances, provided all requirements are met.</p>
                     </div>
                 </div>
                 <div class="accordion_new">
                     <div class="accordion-trigger">
                         <div class="title-accordion-wrap">
-                            <div class="accordion-title_new">Is there a minimum budget for campaigns?</div>
+                            <div class="accordion-title_new" data-i18n="faq.q5">Is there a minimum budget for campaigns?</div>
                         </div>
                         <div class="arrow-accordion">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="arrow-svg">
@@ -5201,13 +5213,13 @@
                         </div>
                     </div>
                     <div class="accordion-content">
-                        <p class="accordion-text_new">Yes, WePush requires a minimum budget to start a campaign. The minimum amount is typically in the low three-digit euro range. Currently, at least approximately 300-500 EUR budget is needed to initiate a campaign. (Depending on the campaign type, the minimum budget may vary - see packages below. For example, a campaign focused purely on micro-creators requires at least ~500 EUR budget, while a campaign with larger creators must start somewhat higher). This minimum budget ensures that enough creators can be activated and the campaign has an impact. Amounts below this threshold are not available.</p>
+                        <p class="accordion-text_new" data-i18n="faq.a5">Yes, WePush requires a minimum budget to start a campaign. The minimum amount is typically in the low three-digit euro range. Currently, at least approximately 300-500 EUR budget is needed to initiate a campaign. (Depending on the campaign type, the minimum budget may vary - see packages below. For example, a campaign focused purely on micro-creators requires at least ~500 EUR budget, while a campaign with larger creators must start somewhat higher). This minimum budget ensures that enough creators can be activated and the campaign has an impact. Amounts below this threshold are not available.</p>
                     </div>
                 </div>
                 <div class="accordion_new">
                     <div class="accordion-trigger">
                         <div class="title-accordion-wrap">
-                            <div class="accordion-title_new">What campaign packages are available at WePush and what do they cost?</div>
+                            <div class="accordion-title_new" data-i18n="faq.q6">What campaign packages are available at WePush and what do they cost?</div>
                         </div>
                         <div class="arrow-accordion">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="arrow-svg">
@@ -5216,13 +5228,13 @@
                         </div>
                     </div>
                     <div class="accordion-content">
-                        <p class="accordion-text_new">WePush offers various campaign packages or orientations based on creator size and objectives. There are essentially three categories:<br><br><strong>Nano/Micro-Creator Campaign:</strong> Focus on as many videos as possible through many smaller creators. This package aims to maximize the number of videos and has a minimum budget of around 500 EUR. It's ideal if you're looking for broad reach through many micro-influencers.<br><br><strong>Macro-Creator Campaign:</strong> Focus on larger TikTok creators with more followers. Here you get fewer but higher-reach videos. The minimum budget is around 1,000 EUR for macro-focused campaigns. This package is suitable if you want to work specifically with some larger influencers.<br><br><strong>Mix (Combination of Micro and Macro):</strong> WePush recommends a mix of both approaches. A mix package uses both many small and several larger creators for a balanced effect. A budget of around 1,500 EUR or more is recommended here. With a higher budget, additional features can be activated - for example, from ~5,000 EUR budget, your campaign will also be promoted through a push notification and your song will be prominently listed in the SongPush app.<br><br>The cost of a campaign ultimately depends on your chosen budget - you have the flexibility to set the budget according to your goals. SongPush scales the number of creators and videos accordingly. For reference: ~3,000 EUR budget enables around 200+ creator videos on TikTok. Smaller budgets deliver fewer videos, larger budgets bring more content and possibly additional services. SongPush is happy to advise you on choosing the right package for your goals.</p>
+                        <p class="accordion-text_new" data-i18n="faq.a6" data-i18n-html>WePush offers various campaign packages or orientations based on creator size and objectives. There are essentially three categories:<br><br><strong>Nano/Micro-Creator Campaign:</strong> Focus on as many videos as possible through many smaller creators. This package aims to maximize the number of videos and has a minimum budget of around 500 EUR. It's ideal if you're looking for broad reach through many micro-influencers.<br><br><strong>Macro-Creator Campaign:</strong> Focus on larger TikTok creators with more followers. Here you get fewer but higher-reach videos. The minimum budget is around 1,000 EUR for macro-focused campaigns. This package is suitable if you want to work specifically with some larger influencers.<br><br><strong>Mix (Combination of Micro and Macro):</strong> WePush recommends a mix of both approaches. A mix package uses both many small and several larger creators for a balanced effect. A budget of around 1,500 EUR or more is recommended here. With a higher budget, additional features can be activated - for example, from ~5,000 EUR budget, your campaign will also be promoted through a push notification and your song will be prominently listed in the SongPush app.<br><br>The cost of a campaign ultimately depends on your chosen budget - you have the flexibility to set the budget according to your goals. SongPush scales the number of creators and videos accordingly. For reference: ~3,000 EUR budget enables around 200+ creator videos on TikTok. Smaller budgets deliver fewer videos, larger budgets bring more content and possibly additional services. SongPush is happy to advise you on choosing the right package for your goals.</p>
                     </div>
                 </div>
                 <div class="accordion_new">
                     <div class="accordion-trigger">
                         <div class="title-accordion-wrap">
-                            <div class="accordion-title_new">How many TikTok videos or creators do I get per campaign?</div>
+                            <div class="accordion-title_new" data-i18n="faq.q7">How many TikTok videos or creators do I get per campaign?</div>
                         </div>
                         <div class="arrow-accordion">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="arrow-svg">
@@ -5231,13 +5243,13 @@
                         </div>
                     </div>
                     <div class="accordion-content">
-                        <p class="accordion-text_new">The number of creators and videos depends largely on your budget and the chosen package. WePush scales the campaign accordingly: The higher the budget, the more creators can be activated and the more videos are created. For example, a budget of around 3,000 EUR can produce approximately 200-220 TikTok creations. A smaller test budget (e.g., 500 EUR) would result in fewer videos, while very large budgets (several thousand euros) can generate hundreds of videos.<br><br>Important to know: You don't book a fixed number of videos in advance, but WePush ensures as many high-quality videos as possible within your budget. A customer who initially wanted to try WePush was unsure "how many videos, which creator, etc." would come out in the end. The answer: Even with the minimum budget, enough creators are involved to achieve a noticeable effect. With each budget increase (from 500 EUR to 1,000 EUR or more, for example), the approximate number of videos increases significantly. WePush can give you an estimate in advance of how many creations to expect. In general: more budget = more creator videos (with diminishing marginal returns at very large volumes). The exact number varies per campaign, but WePush always optimizes to get the maximum out of your budget.</p>
+                        <p class="accordion-text_new" data-i18n="faq.a7" data-i18n-html>The number of creators and videos depends largely on your budget and the chosen package. WePush scales the campaign accordingly: The higher the budget, the more creators can be activated and the more videos are created. For example, a budget of around 3,000 EUR can produce approximately 200-220 TikTok creations. A smaller test budget (e.g., 500 EUR) would result in fewer videos, while very large budgets (several thousand euros) can generate hundreds of videos.<br><br>Important to know: You don't book a fixed number of videos in advance, but WePush ensures as many high-quality videos as possible within your budget. A customer who initially wanted to try WePush was unsure "how many videos, which creator, etc." would come out in the end. The answer: Even with the minimum budget, enough creators are involved to achieve a noticeable effect. With each budget increase (from 500 EUR to 1,000 EUR or more, for example), the approximate number of videos increases significantly. WePush can give you an estimate in advance of how many creations to expect. In general: more budget = more creator videos (with diminishing marginal returns at very large volumes). The exact number varies per campaign, but WePush always optimizes to get the maximum out of your budget.</p>
                     </div>
                 </div>
                 <div class="accordion_new">
                     <div class="accordion-trigger">
                         <div class="title-accordion-wrap">
-                            <div class="accordion-title_new">How does payment work and will I receive an invoice for the campaign?</div>
+                            <div class="accordion-title_new" data-i18n="faq.q8">How does payment work and will I receive an invoice for the campaign?</div>
                         </div>
                         <div class="arrow-accordion">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="arrow-svg">
@@ -5246,13 +5258,13 @@
                         </div>
                     </div>
                     <div class="accordion-content">
-                        <p class="accordion-text_new">Payment for your SongPush campaign is flexible. If you book the campaign through the WePush online tool, you can conveniently pay by credit card. Many customers (especially companies) prefer to work with a classic invoice or PO (Purchase Order). WePush supports this: You can enter a billing address and a purchase order/PO number during the booking process. In this case, you will receive an official invoice for the campaign amount, which you can pay by bank transfer as usual. WePush explicitly asks for the billing address and PO in the order form to make processing easier for corporate customers.<br><br>Additionally, SongPush offers a Team Wallet option: This is a type of credit account that you can top up in advance. This option is helpful when, for example, credit card payments or individual POs are cumbersome. The Team Wallet allows you to start campaigns without direct credit card or PO entry - you simply use your previously deposited balance.<br><br>In short: Payment methods include credit card, invoice via PO, and the rechargeable Team Wallet. In all cases, WePush ensures that you receive an invoice/receipt for the campaign (either immediately with credit card payment or traditionally by invoice when using PO). Companies can thus manage their accounting internally, and all payments are clearly documented.</p>
+                        <p class="accordion-text_new" data-i18n="faq.a8" data-i18n-html>Payment for your SongPush campaign is flexible. If you book the campaign through the WePush online tool, you can conveniently pay by credit card. Many customers (especially companies) prefer to work with a classic invoice or PO (Purchase Order). WePush supports this: You can enter a billing address and a purchase order/PO number during the booking process. In this case, you will receive an official invoice for the campaign amount, which you can pay by bank transfer as usual. WePush explicitly asks for the billing address and PO in the order form to make processing easier for corporate customers.<br><br>Additionally, SongPush offers a Team Wallet option: This is a type of credit account that you can top up in advance. This option is helpful when, for example, credit card payments or individual POs are cumbersome. The Team Wallet allows you to start campaigns without direct credit card or PO entry - you simply use your previously deposited balance.<br><br>In short: Payment methods include credit card, invoice via PO, and the rechargeable Team Wallet. In all cases, WePush ensures that you receive an invoice/receipt for the campaign (either immediately with credit card payment or traditionally by invoice when using PO). Companies can thus manage their accounting internally, and all payments are clearly documented.</p>
                     </div>
                 </div>
             </div>
             <div class="faq-footer">
                 <a href="https://help.songpush.com/creator" target="_blank" class="faq-link">
-                    <span>Check out our FAQs</span>
+                    <span data-i18n="faq.checkOutLink">Check out our FAQs</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>
@@ -5266,12 +5278,12 @@
         <div class="container">
             <div class="advertiser-content">
                 <div class="advertiser-text">
-                    <span class="advertiser-badge">For Creators</span>
-                    <h2 class="advertiser-title">Are you a creator?</h2>
-                    <p class="advertiser-desc">Want to earn money creating content for top brands? Join 50,000+ creators on WePush and start earning today.</p>
+                    <span class="advertiser-badge" data-i18n="creatorCta.badge">For Creators</span>
+                    <h2 class="advertiser-title" data-i18n="creatorCta.title">Are you a creator?</h2>
+                    <p class="advertiser-desc" data-i18n="creatorCta.desc">Want to earn money creating content for top brands? Join 50,000+ creators on WePush and start earning today.</p>
                 </div>
                 <a href="https://songpush.com" target="_blank" class="btn-advertiser">
-                    <span>Start Earning</span>
+                    <span data-i18n="creatorCta.button">Start Earning</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>
@@ -5288,18 +5300,18 @@
         </div>
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-title">Ready to Launch<br>Your Campaign?</h2>
-                <p class="cta-text">Join hundreds of brands reaching millions through authentic creator content</p>
+                <h2 class="cta-title" data-i18n="mainCta.title" data-i18n-html>Ready to Launch<br>Your Campaign?</h2>
+                <p class="cta-text" data-i18n="mainCta.text">Join hundreds of brands reaching millions through authentic creator content</p>
                 <a href="https://app.songpush.com" class="btn-primary btn-large btn-gradient">
-                    <span>Start Your Campaign</span>
+                    <span data-i18n="mainCta.button">Start Your Campaign</span>
                     <svg viewBox="0 0 24 24" fill="none">
                         <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2"/>
                     </svg>
                 </a>
                 <div class="cta-features">
-                    <span>✓ AI-Optimized</span>
-                    <span>✓ Pay Per Result</span>
-                    <span>✓ Brand Safety</span>
+                    <span data-i18n="mainCta.feature1">✓ AI-Optimized</span>
+                    <span data-i18n="mainCta.feature2">✓ Pay Per Result</span>
+                    <span data-i18n="mainCta.feature3">✓ Brand Safety</span>
                 </div>
             </div>
         </div>
@@ -5310,11 +5322,11 @@
         <div class="container">
             <div class="advertiser-content">
                 <div class="advertiser-text">
-                    <h2 class="advertiser-title">Are you a record label?</h2>
-                    <p class="advertiser-desc">Looking for SongPush to promote your music? Visit our dedicated platform for artists and labels.</p>
+                    <h2 class="advertiser-title" data-i18n="recordLabelCta.title">Are you a record label?</h2>
+                    <p class="advertiser-desc" data-i18n="recordLabelCta.desc">Looking for SongPush to promote your music? Visit our dedicated platform for artists and labels.</p>
                 </div>
                 <a href="https://www.songpush.com/en/labels-artists" target="_blank" class="btn-advertiser">
-                    <span>Go to SongPush.com</span>
+                    <span data-i18n="recordLabelCta.button">Go to SongPush.com</span>
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>
@@ -5329,35 +5341,41 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <img src="../assets/images/logo.webp" alt="WePush Logo" class="footer-logo" loading="lazy">
-                    <p class="footer-tagline">The leading operating system powering the creator economy</p>
+                    <p class="footer-tagline" data-i18n="footer.tagline">The leading operating system powering the creator economy</p>
                 </div>
 
                 <div class="footer-links">
                     <div class="footer-col">
-                        <h4>Product</h4>
-                        <a href="#how-it-works">How It Works</a>
-                        <a href="#pricing">Pricing</a>
-                        <a href="#case-studies">Case Studies</a>
+                        <h4 data-i18n="footer.product">Product</h4>
+                        <a href="#how-it-works" data-i18n="footer.howItWorks">How It Works</a>
+                        <a href="#pricing" data-i18n="footer.pricing">Pricing</a>
+                        <a href="#case-studies" data-i18n="footer.caseStudies">Case Studies</a>
                     </div>
                     <div class="footer-col">
-                        <h4>Company</h4>
-                        <a href="https://join.com/companies/songpush">Careers</a>
+                        <h4 data-i18n="footer.company">Company</h4>
+                        <a href="https://join.com/companies/songpush" data-i18n="footer.careers">Careers</a>
                     </div>
                     <div class="footer-col">
-                        <h4>Legal</h4>
-                        <a href="https://www.songpush.com/impressum">Imprint</a>
+                        <h4 data-i18n="footer.legal">Legal</h4>
+                        <a href="https://www.songpush.com/impressum" data-i18n="footer.imprint">Imprint</a>
                     </div>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 WePush. All rights reserved.</p>
+                <p data-i18n="footer.copyright">&copy; 2025 WePush. All rights reserved.</p>
+                <div class="lang-switcher">
+                    <button data-lang-switch="en" class="lang-btn">EN</button>
+                    <span class="lang-divider">|</span>
+                    <button data-lang-switch="de" class="lang-btn">DE</button>
+                </div>
             </div>
         </div>
     </footer>
 
     <script src="../js/script.js"></script>
     <script src="../js/advertiser.js"></script>
+    <script src="../js/i18n.js"></script>
     <script>
         // Analytics Carousel - Animate on scroll
         const acWrapper = document.querySelector('.ac-wrapper');
