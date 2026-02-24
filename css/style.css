@@ -9769,6 +9769,7 @@ section {
 
     .hero-headline {
         font-size: clamp(36px, 9vw, 48px);
+        margin-top: 40px;
     }
 
     /* iOS performance: remove expensive effects on mobile */
