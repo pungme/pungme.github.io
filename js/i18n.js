@@ -182,7 +182,7 @@
       "testimonials.role3": "Multi Platin- & Gold S\u00e4nger & Songwriter",
       "testimonials.quote3": "\"Ein unglaubliches Tool f\u00fcr jeden Werbetreibenden. Hunderte Kreationen auf Knopfdruck ohne Kopfschmerzen sind ein Game Changer.\"",
       "testimonials.role4": "Cosnova",
-      "testimonials.quote4": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\"",
+      "testimonials.quote4": "\"Was früher Wochen gedauert hat, läuft mit WePush in einem Bruchteil der Zeit. Von der Creator-Suche, Auswahl, Content Delivery über Buyouts und Billing bildet die Plattform alles ab, um Kampagnen für unsere Produkte & Brands im großem Stil umzusetzen. Für uns ein absoluter Gamechanger!\"",
       "guideflow.title": "So funktioniert\u2019s",
       "guideflow.subtitle": "Starte deine erste Kampagne in wenigen Minuten mit unserer intuitiven Plattform.",
       "pricing.badge": "Preise",
